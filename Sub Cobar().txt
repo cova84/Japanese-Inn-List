@@ -1,0 +1,77 @@
+Sub Cobar()
+
+    Debug.Print Time & " - スタート"
+
+     '各種データ取得
+    Dim titlerow As Integer, katarow As Integer
+    Dim stdatacol As Integer, stdatarow As Integer
+    Dim endrow As Integer, endcol As Integer
+    
+    Set targetsheet = Worksheets("一覧リスト")
+    stdatacol = 1
+    stdatarow = 4
+
+    titlerow = 2
+    katarow = 3
+    
+    endrow = Cells(Rows.Count, "A").End(xlUp).Row
+    endcol = Cells(2, Columns.Count).End(xlToLeft).Column
+
+    
+    Dim nowrow As Integer
+    Dim nowcol As Integer
+    Dim outputString As String
+    
+    
+     Workbooks.Add
+    Set OutputSheet = ActiveWorkbook.Sheets(1)
+
+    
+    OutputSheet.Cells(1, 1) = "["
+        
+    '後処理
+      '[ {...},{...},...{...}]  になるようにループ
+    For nowrow = 1 To endrow - 1
+        If (nowrow <> 1) Then
+            outputString = "  , {"
+        Else
+                outputString = "  {"
+        End If
+        
+        outputString = outputString & " """ & _
+            targetsheet.Cells(titlerow, 1).Value & """ :  " & nowrow & " "
+        
+        For nowcol = 2 To endcol
+            ' "Left" :
+            outputString = outputString & ",  " & _
+                    """" & targetsheet.Cells(titlerow, nowcol).Value & """ : "
+                    
+                    'Right  Int or String
+            If targetsheet.Cells(katarow, nowcol).Value = "String" Then
+                   outputString = outputString & _
+                    """" & targetsheet.Cells(nowrow + 3, nowcol).Value & """"
+            ElseIf targetsheet.Cells(katarow, nowcol).Value = "Int" Then
+                   outputString = outputString & _
+                    targetsheet.Cells(nowrow + 3, nowcol).Value
+             End If
+        Next
+        
+        OutputSheet.Cells(nowrow + 1, 1).Value = outputString & " }"
+        
+    Next
+    
+    OutputSheet.Cells(nowrow + 1, 1) = "]"
+    
+    OutputSheet.Activate
+    Range("A1").Activate 'A1に戻す
+    Columns("A").WrapText = False
+    Columns("A").Select
+    
+    '動作を表示してoutputSheetのA1に表示して終了する
+     'Application.ScreenUpdating = True
+
+
+    Set targetsheet = Nothing
+    Set OutputSheet = Nothing
+    
+End Sub
