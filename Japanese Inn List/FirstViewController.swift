@@ -11,6 +11,8 @@ import KJExpandableTableTree
 
 class FirstViewController: UIViewController {
     
+    //TODO不要な階層を削除。変数を代入。
+    
     // KJ Tree instances -------------------------
     var arrayTree:[Parent] = []
     var kjtreeInstance: KJTree = KJTree()

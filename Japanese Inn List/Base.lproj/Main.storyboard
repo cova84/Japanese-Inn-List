@@ -6,9 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-Bold</string>
+            <string>Futura-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
@@ -58,103 +65,183 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="mapView" destination="7Bc-m9-jN8" id="t4q-j4-Fc4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1.875" y="1023.5915492957747"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8hh-Ca-sqw">
+            <objects>
+                <navigationController id="sev-S1-nud" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3sP-fC-t9g">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFQ-QU-sik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1515" y="2693"/>
         </scene>
         <!--test-->
         <scene sceneID="d61-2Q-hig">
             <objects>
                 <viewController id="ZmF-6z-xQM" customClass="DetailView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e5Z-Fa-SuW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYQ-yA-5aK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1551"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lK8-Zp-onP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1600"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Detail View3" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="M2q-dF-4LL">
-                                                <rect key="frame" x="90" y="778" width="194" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Hare Kapone" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DGg-4w-L04">
+                                                <rect key="frame" x="8" y="28" width="265" height="43"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="OUc-ka-bxi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Detail View4" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vOZ-aX-PEp">
-                                                <rect key="frame" x="91" y="1188" width="194" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hare Kaponeは日本人専用の日本人宿で、お客様だけで一軒家をシェアするタイプのドミトリーです。っっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっl" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-vX-DRn">
+                                                <rect key="frame" x="16" y="70" width="288" height="49"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Tuki Haka Hevari, Hanga Roa, Easter Island, Chile" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xza-HP-Lbp">
+                                                <rect key="frame" x="16" y="542" width="288" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="eiZ-Az-N79"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleHotelImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9Hm-vV-85M">
+                                                <rect key="frame" x="16" y="127" width="288" height="179"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="179" id="6SO-HE-WSp"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgQ-y1-dDB">
+                                                <rect key="frame" x="16" y="312" width="288" height="37"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv8-Mx-5jf">
+                                                        <rect key="frame" x="24" y="1" width="240" height="35"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                        <state key="normal" title="お気に入りに追加">
+                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapFacorites:" destination="ZmF-6z-xQM" eventType="touchUpInside" id="EzJ-g5-FoL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.97254901959999995" green="0.19215686269999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="Fv8-Mx-5jf" firstAttribute="centerY" secondItem="IgQ-y1-dDB" secondAttribute="centerY" id="1Jv-pr-zYH"/>
+                                                    <constraint firstItem="Fv8-Mx-5jf" firstAttribute="top" secondItem="IgQ-y1-dDB" secondAttribute="top" constant="1" id="RDZ-xV-pwJ"/>
+                                                    <constraint firstItem="Fv8-Mx-5jf" firstAttribute="centerX" secondItem="IgQ-y1-dDB" secondAttribute="centerX" id="b2P-24-hNl"/>
+                                                    <constraint firstItem="Fv8-Mx-5jf" firstAttribute="leading" secondItem="IgQ-y1-dDB" secondAttribute="leading" constant="24" id="pRu-b2-p7G"/>
+                                                </constraints>
+                                            </view>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-Te-Uvn">
+                                                <rect key="frame" x="16" y="356" width="288" height="178"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="178" id="xJM-ul-CgW"/>
+                                                </constraints>
+                                            </mapView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="■詳細情報" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gSQ-VI-OTi">
+                                                <rect key="frame" x="20" y="583" width="284" height="43"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="feQ-tz-p3H"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="18"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Detail View2" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="YGi-y7-g1k">
-                                                <rect key="frame" x="91" y="229" width="193" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" text="■予約方法" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="HMW-Zb-CiF">
+                                                <rect key="frame" x="18" y="1121" width="284" height="43"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Detail View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bTe-Mb-X3n">
-                                                <rect key="frame" x="101" y="28" width="172" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宿情報　詳細" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWS-xx-zOz">
-                                                <rect key="frame" x="144" y="106" width="86" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Detail View5" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gvl-X5-Rtn">
-                                                <rect key="frame" x="80" y="1406" width="193" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="cLa-9a-p7P"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="18"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1600" id="SS4-iO-oBp"/>
+                                            <constraint firstItem="9Hm-vV-85M" firstAttribute="leading" secondItem="IgQ-y1-dDB" secondAttribute="leading" id="7cT-NH-OLY"/>
+                                            <constraint firstItem="gFQ-vX-DRn" firstAttribute="centerX" secondItem="lK8-Zp-onP" secondAttribute="centerX" id="9ct-N4-3MR"/>
+                                            <constraint firstItem="9Hm-vV-85M" firstAttribute="trailing" secondItem="IgQ-y1-dDB" secondAttribute="trailing" id="ARG-pb-hO5"/>
+                                            <constraint firstItem="Xza-HP-Lbp" firstAttribute="centerX" secondItem="HMW-Zb-CiF" secondAttribute="centerX" id="Bvv-AQ-Veu"/>
+                                            <constraint firstItem="DGg-4w-L04" firstAttribute="top" secondItem="lK8-Zp-onP" secondAttribute="topMargin" id="Hph-6B-e9E"/>
+                                            <constraint firstItem="9Hm-vV-85M" firstAttribute="top" secondItem="gFQ-vX-DRn" secondAttribute="bottom" constant="8" symbolic="YES" id="KTS-B9-xaQ"/>
+                                            <constraint firstItem="gSQ-VI-OTi" firstAttribute="leading" secondItem="lK8-Zp-onP" secondAttribute="leading" constant="20" id="NAd-fl-WuP"/>
+                                            <constraint firstItem="Xza-HP-Lbp" firstAttribute="trailing" secondItem="gSQ-VI-OTi" secondAttribute="trailing" id="NsF-Pg-wno"/>
+                                            <constraint firstAttribute="height" constant="1600" id="Okz-ZI-uNd"/>
+                                            <constraint firstItem="hf3-Te-Uvn" firstAttribute="top" secondItem="IgQ-y1-dDB" secondAttribute="bottom" constant="7" id="T1x-tR-7RY"/>
+                                            <constraint firstItem="gFQ-vX-DRn" firstAttribute="top" secondItem="lK8-Zp-onP" secondAttribute="top" constant="70" id="TO0-qy-1j4"/>
+                                            <constraint firstItem="hf3-Te-Uvn" firstAttribute="trailing" secondItem="Xza-HP-Lbp" secondAttribute="trailing" id="UXw-tx-qsC"/>
+                                            <constraint firstAttribute="trailing" secondItem="DGg-4w-L04" secondAttribute="trailing" constant="47" id="Uoc-by-yJO"/>
+                                            <constraint firstItem="Xza-HP-Lbp" firstAttribute="top" secondItem="hf3-Te-Uvn" secondAttribute="bottom" constant="8" symbolic="YES" id="W1I-DE-XDh"/>
+                                            <constraint firstItem="hf3-Te-Uvn" firstAttribute="top" secondItem="lK8-Zp-onP" secondAttribute="top" constant="356" id="WT5-Y7-EuC"/>
+                                            <constraint firstItem="DGg-4w-L04" firstAttribute="leading" secondItem="lK8-Zp-onP" secondAttribute="leadingMargin" id="Xws-BG-HqT"/>
+                                            <constraint firstItem="IgQ-y1-dDB" firstAttribute="top" secondItem="9Hm-vV-85M" secondAttribute="bottom" constant="6" id="ZVq-pk-NY6"/>
+                                            <constraint firstItem="gFQ-vX-DRn" firstAttribute="leading" secondItem="lK8-Zp-onP" secondAttribute="leading" constant="16" id="cCa-zg-pgY"/>
+                                            <constraint firstItem="gFQ-vX-DRn" firstAttribute="leading" secondItem="9Hm-vV-85M" secondAttribute="leading" id="n3E-R0-wST"/>
+                                            <constraint firstItem="IgQ-y1-dDB" firstAttribute="leading" secondItem="hf3-Te-Uvn" secondAttribute="leading" id="oUh-gR-VBX"/>
+                                            <constraint firstItem="9Hm-vV-85M" firstAttribute="top" secondItem="DGg-4w-L04" secondAttribute="bottom" constant="56" id="on1-cf-3p4"/>
+                                            <constraint firstItem="IgQ-y1-dDB" firstAttribute="trailing" secondItem="hf3-Te-Uvn" secondAttribute="trailing" id="pIa-SF-yug"/>
+                                            <constraint firstItem="HMW-Zb-CiF" firstAttribute="leading" secondItem="lK8-Zp-onP" secondAttribute="leading" constant="18" id="xLa-LK-USm"/>
+                                            <constraint firstItem="gSQ-VI-OTi" firstAttribute="top" secondItem="Xza-HP-Lbp" secondAttribute="bottom" constant="8" symbolic="YES" id="ybj-F0-roh"/>
+                                            <constraint firstItem="hf3-Te-Uvn" firstAttribute="leading" secondItem="Xza-HP-Lbp" secondAttribute="leading" id="yyy-Di-ElD"/>
+                                            <constraint firstItem="gFQ-vX-DRn" firstAttribute="trailing" secondItem="9Hm-vV-85M" secondAttribute="trailing" id="zzb-Sv-Jci"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="leading" secondItem="fYQ-yA-5aK" secondAttribute="leading" id="G4c-dE-RDh"/>
-                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="top" secondItem="fYQ-yA-5aK" secondAttribute="top" id="GHX-Ve-tG1"/>
-                                    <constraint firstAttribute="bottom" secondItem="lK8-Zp-onP" secondAttribute="bottom" id="SUL-s1-1ps"/>
-                                    <constraint firstAttribute="trailing" secondItem="lK8-Zp-onP" secondAttribute="trailing" id="mZc-p3-bbC"/>
+                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="leading" secondItem="fYQ-yA-5aK" secondAttribute="leading" id="3xb-gn-J0X"/>
+                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="centerX" secondItem="fYQ-yA-5aK" secondAttribute="centerX" id="V6c-YX-sch"/>
+                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="top" secondItem="fYQ-yA-5aK" secondAttribute="top" id="XQk-Ni-iDU"/>
+                                    <constraint firstAttribute="trailing" secondItem="lK8-Zp-onP" secondAttribute="trailing" id="a9J-ZK-HYG"/>
+                                    <constraint firstAttribute="bottom" secondItem="lK8-Zp-onP" secondAttribute="bottom" constant="-49" id="otO-3d-7Kb"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="top" secondItem="e5Z-Fa-SuW" secondAttribute="top" id="Yt4-Zg-rjA"/>
-                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="bottom" secondItem="1Tf-4F-5Tu" secondAttribute="bottom" id="ixq-X9-AeP"/>
-                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="trailing" secondItem="1Tf-4F-5Tu" secondAttribute="trailing" id="oua-kC-EKU"/>
-                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="leading" secondItem="1Tf-4F-5Tu" secondAttribute="leading" id="t6d-wr-6Gy"/>
-                            <constraint firstItem="lK8-Zp-onP" firstAttribute="width" secondItem="e5Z-Fa-SuW" secondAttribute="width" id="vqO-2L-nn8"/>
+                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="bottom" secondItem="1Tf-4F-5Tu" secondAttribute="bottom" id="9Gt-rN-bjw"/>
+                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="top" secondItem="e5Z-Fa-SuW" secondAttribute="top" id="GvD-rC-5Ti"/>
+                            <constraint firstAttribute="trailing" secondItem="fYQ-yA-5aK" secondAttribute="trailing" id="Jm6-SA-h2P"/>
+                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="leading" secondItem="e5Z-Fa-SuW" secondAttribute="leading" id="oLW-vb-9Vy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Tf-4F-5Tu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="test" id="avf-u7-nkr"/>
                     <navigationItem key="navigationItem" id="tdh-20-FEF"/>
-                    <size key="freeformSize" width="375" height="1600"/>
+                    <size key="freeformSize" width="320" height="1600"/>
+                    <connections>
+                        <outlet property="hotelAddress" destination="Xza-HP-Lbp" id="eiG-sf-BIb"/>
+                        <outlet property="hotelComment" destination="gFQ-vX-DRn" id="fyc-b0-xfs"/>
+                        <outlet property="hotelImageView" destination="9Hm-vV-85M" id="fLg-q7-S9c"/>
+                        <outlet property="hotelMap" destination="hf3-Te-Uvn" id="5kd-MW-q3y"/>
+                        <outlet property="hotelName" destination="DGg-4w-L04" id="B45-pw-rBk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIh-gu-dnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="2396"/>
+            <point key="canvasLocation" x="410.625" y="2395.7746478873241"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="cTs-ww-mb1">
@@ -212,38 +299,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-be-r95">
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-be-r95">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem systemItem="more" id="xgv-nI-edq"/>
                                 </items>
                             </tabBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fouth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0jW-7Z-rMM">
-                                <rect key="frame" x="60" y="252" width="202" height="43"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="infomation" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0jW-7Z-rMM">
+                                <rect key="frame" x="16" y="20" width="202" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お問合せ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQY-6T-b5Q">
-                                <rect key="frame" x="133" y="299" width="58" height="17"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="宿の情報について、ご意見・要望があれば下記のURLからコメントをお願い致します。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ska-Q8-KDI">
+                                <rect key="frame" x="16" y="71" width="288" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="infoLink.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8j8-0x-ban">
+                                <rect key="frame" x="16" y="135" width="288" height="179"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAC-Bf-72d">
+                                <rect key="frame" x="16" y="343" width="288" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-Pe-53S">
+                                        <rect key="frame" x="8" y="8" width="272" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                        <state key="normal" title="ご意見・要望は、こちらからお願いします。">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.19215686269999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Copyright ©  life of." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iui-ym-vt4">
+                                <rect key="frame" x="16" y="475" width="288" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="RBR-be-r95" secondAttribute="trailing" id="49s-dj-1Lv"/>
-                            <constraint firstItem="jQY-6T-b5Q" firstAttribute="leading" secondItem="Y6A-TE-clY" secondAttribute="leading" constant="133" id="5eE-Wc-sQv"/>
-                            <constraint firstItem="0jW-7Z-rMM" firstAttribute="top" secondItem="Y6A-TE-clY" secondAttribute="top" constant="232" id="VjY-TZ-Zqf"/>
-                            <constraint firstItem="RBR-be-r95" firstAttribute="top" secondItem="Y6A-TE-clY" secondAttribute="bottom" id="drg-Yh-5Px"/>
-                            <constraint firstItem="Y6A-TE-clY" firstAttribute="trailing" secondItem="0jW-7Z-rMM" secondAttribute="trailing" constant="58" id="hql-W9-A90"/>
-                            <constraint firstItem="0jW-7Z-rMM" firstAttribute="leading" secondItem="Y6A-TE-clY" secondAttribute="leading" constant="60" id="n7f-90-7bM"/>
-                            <constraint firstItem="RBR-be-r95" firstAttribute="leading" secondItem="5Xi-u5-ocz" secondAttribute="leading" id="uJ1-85-wY7"/>
-                            <constraint firstItem="jQY-6T-b5Q" firstAttribute="top" secondItem="0jW-7Z-rMM" secondAttribute="bottom" constant="4" id="zAf-9E-ZA3"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Y6A-TE-clY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="info" id="VDg-2d-Or7"/>
@@ -251,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDS-vN-5BC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="1023"/>
+            <point key="canvasLocation" x="1651.875" y="1022.5352112676056"/>
         </scene>
         <!--Load View-->
         <scene sceneID="8gM-SI-3rR">
@@ -310,4 +416,8 @@
             <point key="canvasLocation" x="412" y="35"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="infoLink.jpg" width="2075" height="1304"/>
+        <image name="sampleHotelImage.jpg" width="640" height="480"/>
+    </resources>
 </document>
