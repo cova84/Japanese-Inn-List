@@ -15,8 +15,10 @@
 		D126E3841FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D126E37E1FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift */; };
 		D126E3851FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D126E37F1FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib */; };
 		D126E3861FC2823400FF0DE1 /* ParentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D126E3801FC2823400FF0DE1 /* ParentsTableViewCell.xib */; };
+		D15119191FC4914C002CF1C7 /* HotelListMacro.json in Resources */ = {isa = PBXBuildFile; fileRef = D15119181FC4914C002CF1C7 /* HotelListMacro.json */; };
 		D162A7E01FC3CBBB00D6A05F /* sampleHotelImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */; };
 		D162A7E21FC3CED300D6A05F /* infoLink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7E11FC3CED300D6A05F /* infoLink.jpg */; };
+		D18F48551FC4722200535881 /* favoriteCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */; };
 		D1D23C2C1FBCB426009D3895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D23C2B1FBCB426009D3895 /* AppDelegate.swift */; };
 		D1D23C2E1FBCB426009D3895 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D23C2D1FBCB426009D3895 /* FirstViewController.swift */; };
 		D1D23C301FBCB426009D3895 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D23C2F1FBCB426009D3895 /* SecondViewController.swift */; };
@@ -63,8 +65,10 @@
 		D126E37E1FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Childs3rdStageTableViewCell.swift; sourceTree = "<group>"; };
 		D126E37F1FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Childs2ndStageTableViewCell.xib; sourceTree = "<group>"; };
 		D126E3801FC2823400FF0DE1 /* ParentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentsTableViewCell.xib; sourceTree = "<group>"; };
+		D15119181FC4914C002CF1C7 /* HotelListMacro.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = HotelListMacro.json; path = ../HotelListMacro.json; sourceTree = "<group>"; };
 		D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleHotelImage.jpg; sourceTree = SOURCE_ROOT; };
 		D162A7E11FC3CED300D6A05F /* infoLink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = infoLink.jpg; sourceTree = SOURCE_ROOT; };
+		D18F48541FC4722200535881 /* favoriteCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = favoriteCoreData.xcdatamodel; sourceTree = "<group>"; };
 		D1D23C281FBCB426009D3895 /* Japanese Inn List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Japanese Inn List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D23C2B1FBCB426009D3895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1D23C2D1FBCB426009D3895 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -176,8 +180,6 @@
 		D1D23C2A1FBCB426009D3895 /* Japanese Inn List */ = {
 			isa = PBXGroup;
 			children = (
-				D162A7E11FC3CED300D6A05F /* infoLink.jpg */,
-				D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */,
 				D126E3871FC2823A00FF0DE1 /* TableviewCells */,
 				D1D23C651FBCBD48009D3895 /* LoadView.swift */,
 				D1D23C2B1FBCB426009D3895 /* AppDelegate.swift */,
@@ -186,10 +188,14 @@
 				D1D23C5B1FBCB867009D3895 /* ThirdViewController.swift */,
 				D1D23C5D1FBCB882009D3895 /* FourthViewController.swift */,
 				D1D23C631FBCBD13009D3895 /* DetailView.swift */,
-				D117090E1FBE997500F4B3E4 /* Main.storyboard */,
 				D1D23C341FBCB426009D3895 /* Assets.xcassets */,
+				D117090E1FBE997500F4B3E4 /* Main.storyboard */,
 				D1D23C361FBCB426009D3895 /* LaunchScreen.storyboard */,
+				D162A7E11FC3CED300D6A05F /* infoLink.jpg */,
+				D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */,
 				D1D23C391FBCB426009D3895 /* Info.plist */,
+				D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */,
+				D15119181FC4914C002CF1C7 /* HotelListMacro.json */,
 			);
 			path = "Japanese Inn List";
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				D126E3861FC2823400FF0DE1 /* ParentsTableViewCell.xib in Resources */,
 				D162A7E21FC3CED300D6A05F /* infoLink.jpg in Resources */,
 				D126E3851FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib in Resources */,
+				D15119191FC4914C002CF1C7 /* HotelListMacro.json in Resources */,
 				D126E3831FC2823400FF0DE1 /* Childs3rdStageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +519,7 @@
 			files = (
 				D1D23C301FBCB426009D3895 /* SecondViewController.swift in Sources */,
 				D1D23C641FBCBD13009D3895 /* DetailView.swift in Sources */,
+				D18F48551FC4722200535881 /* favoriteCoreData.xcdatamodeld in Sources */,
 				D1D23C2C1FBCB426009D3895 /* AppDelegate.swift in Sources */,
 				D1D23C5C1FBCB867009D3895 /* ThirdViewController.swift in Sources */,
 				D126E3821FC2823400FF0DE1 /* Childs2ndStageTableViewCell.swift in Sources */,
@@ -823,6 +831,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D18F48541FC4722200535881 /* favoriteCoreData.xcdatamodel */,
+			);
+			currentVersion = D18F48541FC4722200535881 /* favoriteCoreData.xcdatamodel */;
+			path = favoriteCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D1D23C201FBCB426009D3895 /* Project object */;
 }
