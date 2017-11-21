@@ -11,7 +11,6 @@ import UIKit
 import MapKit
 import Foundation
 
-
 class DetailView: UIViewController {
     //前の画面から受け取る為のプロパティ
     var getAreaName = ""
