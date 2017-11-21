@@ -10,10 +10,16 @@ import UIKit
 
 class FourthViewController: UIViewController {
     
+    @IBAction func tapLifeofLink(_ sender: UIButton) {
+        let url = URL(string:"http://life-of.net")
+        if( UIApplication.shared.canOpenURL(url!) ) {
+            UIApplication.shared.open(url!)
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
