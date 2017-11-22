@@ -6,14 +6,14 @@
 //
 
 
-////コピー済み/////////////////////////////////////////////////////
 import UIKit
 import MapKit
 import Foundation
 
 class DetailView: UIViewController {
-    //前の画面から受け取る為のプロパティ
-    var getAreaName = ""
+    
+//    //前の画面から受け取る為のプロパティ
+//    var getAreaName = ""
     
     @IBOutlet weak var hotelName: UILabel!
     @IBOutlet weak var hotelComment: UITextView!
@@ -25,49 +25,33 @@ class DetailView: UIViewController {
     @IBOutlet weak var hotelDetail: UITableView!
     @IBOutlet weak var hotelReservationWay: UITableView!
     
-//json値参考
-//{ ""ID"" :  ""001"",  ""kind"" : ""ホームステイ"",  ""continent"" : ""北アメリカ"",  ""country"" : ""アメリカ"",  ""hotelName"" : ""LAオレンジグローブ"",  ""image"" : 5,  ""address"" : ""住所などはご予約時お知らせ。（※地図は参考程度にお使いください。）"",  ""map"" : ""だいたい"",  ""latitude"" : """",  ""longitude"" : """",  ""accommodation"" : ""鍵付き個室　""限定１部屋のみ\n1名様目　$98/日\n2名様目　$39/日\n3名様目　$19/日\n※３連泊以上の料金",  ""room"" : ""1"",  ""wifi"" : ""あり"",  ""pickup"" : ""無料"",  ""equipment"" : ""バス、トイレ、キッチン、洗濯機、乾燥機など"",  ""reservation"" : ""メール"",  ""reservation_URL"" : """",  ""tel"" : ""アメリカ国内：（８８８）２３２ー１０８９ 海外より：（８０２）８７５ー２３４６"",  ""email"" : ""booking@losnioideyo.com or tom8hiro@yahoo.co.jp"",  ""url"" : ""http://www.losnioideyo.com"",  ""comment"" : ""鍵付き個室＋専用バス・トイレのパーソナルな空間を優先したホームステイ。治安がちょっと心配なロサンゼルスでも駅から徒歩１分の安全な駅前滞在。"",  ""red"" : ""248"",  ""green"" : ""49"",  ""blue"" : ""98"" }
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
         
-        //HotelListMacro.jsonを読み込み、取得したデータを使ってデバックアリアに表示
-//        @IBAction func HotelListMacro(_ sender: UIButton) {
-        
-            //HotelListMacro.jsonを読み込む
-            var filePath = Bundle.main.path(forResource: "HotelListMacro", ofType: "json")
-            
-            //Data型（人が読めない形式）でデータを取得
-            var jsondata = NSData(contentsOfFile: filePath!)
-            
-            //配列データに変換
-            var jsonDictionary = (try! JSONSerialization.jsonObject(with:Data.init(referencing: HotelListMacro!))) as! Array<Any>
-            
-            //配列の中身を高速
-            for dat in jsonDictionary{
-                
-                //Any型からDictionary型へ変換　！！超重要！！
-                var dic = dat as! NSDictionary
-                
-                //辞書の中身を取り出す
-                var name = dic["name"] as! String
-                var price = dic["price"] as! Int
-                
-                print("\(name)の値段は\(price)ペソです")
-                //print("\(dat["name"])の値段は\(dat["price"])ペソです")
-            }
-        }
-        
+//        //全ページからの受け取った情報を表示
+//        print("getAreaName:\(getAreaName)")
+//        //ファイルパスを取得（エリア名が格納されているプロパティリスト）
+//        let filePath = Bundle.main.path(forResource: "areaList", ofType: "plist")
+//        //ファイルの内容を読み込んでディクショナリー型に格納(文字列や数値をキーにして値を格納したり参照できる型)
+//        let dic = NSDictionary(contentsOfFile: filePath!)
+//        //今画面に表示したいデータの取得
+//        let detailInfo = dic![getAreaName] as! NSDictionary
+//        //Dictionaryからキー指定で取り出すと必ずAny型になるので、ダウンキャスト変換が必要
+//        print(detailInfo["description"]as! String)
+//        print(detailInfo["image"]as! String)
+//        print(detailInfo["latitude"]as! String)
+//        print(detailInfo["longitude"]as! String)
+  
 //        //ホテル名
 //        hotelName.text = "hotelName"
 //        //紹介コメント
 //        hotelComment.text = detailInfo["comment"] as! String
-//        hotelComment.sizeToFit() // 文字数に合わせて縦に伸びます。
+//        hotelComment.sizeToFit()          // 文字数に合わせて縦に伸びます。
 //        //画像
 //        hotelImageView.image = UIImage(named:detailInfo["image"] as! String)
-//        //お気に入りに追加のコード必要^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//        //お気に入りに追加のコード必要^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
 //        //地図
 //        let latitude = detailInfo["latitude"] as! String
@@ -95,11 +79,10 @@ class DetailView: UIViewController {
 //        myPin.subtitle = "\(description)"
 //        // 4.mapViewにPinを追加
 //        hotelMap.addAnnotation(myPin)
-//
+
     
-    //myTextViewの表示を一番上から始めるコート
-    var contentOffset = CGPoint.zero
-    
+        var contentOffset = CGPoint.zero  //myTextViewの表示を一番上から始める
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         hotelComment.contentOffset = contentOffset //set
@@ -126,5 +109,5 @@ class DetailView: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
+
 }

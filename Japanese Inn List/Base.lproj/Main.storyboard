@@ -139,7 +139,7 @@
                                                 <rect key="frame" x="16" y="356" width="288" height="178"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </mapView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="26" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p7X-dm-x6o">
+                                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="26" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p7X-dm-x6o">
                                                 <rect key="frame" x="16" y="585" width="288" height="558"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -309,7 +309,7 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="26" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O9C-xt-FO7">
+                                            <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="26" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O9C-xt-FO7">
                                                 <rect key="frame" x="16" y="1155" width="288" height="381"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -450,19 +450,25 @@
                                             </tableView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1551" id="34n-IP-l5h"/>
+                                            <constraint firstAttribute="height" constant="1551" id="Vpw-6Z-szT"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="lK8-Zp-onP" secondAttribute="trailing" id="BXp-BJ-PkC"/>
-                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="leading" secondItem="fYQ-yA-5aK" secondAttribute="leading" id="GiW-yI-tWx"/>
-                                    <constraint firstAttribute="bottom" secondItem="lK8-Zp-onP" secondAttribute="bottom" id="XaQ-iJ-57U"/>
-                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="top" secondItem="fYQ-yA-5aK" secondAttribute="top" id="qsO-JJ-oqU"/>
+                                    <constraint firstAttribute="trailing" secondItem="lK8-Zp-onP" secondAttribute="trailing" id="OTi-SY-beW"/>
+                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="leading" secondItem="fYQ-yA-5aK" secondAttribute="leading" id="s6F-vy-Gqk"/>
+                                    <constraint firstItem="lK8-Zp-onP" firstAttribute="top" secondItem="fYQ-yA-5aK" secondAttribute="top" id="vB9-JL-gi5"/>
+                                    <constraint firstAttribute="bottom" secondItem="lK8-Zp-onP" secondAttribute="bottom" id="wQ8-xc-ni1"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="bottom" secondItem="1Tf-4F-5Tu" secondAttribute="bottom" id="4dz-hr-rfI"/>
+                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="top" secondItem="e5Z-Fa-SuW" secondAttribute="top" id="SMC-dw-cOK"/>
+                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="leading" secondItem="1Tf-4F-5Tu" secondAttribute="leading" id="X6p-oh-epY"/>
+                            <constraint firstItem="fYQ-yA-5aK" firstAttribute="trailing" secondItem="1Tf-4F-5Tu" secondAttribute="trailing" id="zjK-FE-9WR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Tf-4F-5Tu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Deatil" id="avf-u7-nkr"/>
@@ -534,7 +540,7 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="0kN-9F-bxa"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="favoriteTabeleView" destination="G7M-yo-xEE" id="3YC-di-gW7"/>
+                        <outlet property="favoriteTableView" destination="G7M-yo-xEE" id="vUX-gb-nHf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWG-0C-Ii8" userLabel="First Responder" sceneMemberID="firstResponder"/>

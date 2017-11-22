@@ -15,7 +15,6 @@
 		D126E3841FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D126E37E1FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift */; };
 		D126E3851FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D126E37F1FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib */; };
 		D126E3861FC2823400FF0DE1 /* ParentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D126E3801FC2823400FF0DE1 /* ParentsTableViewCell.xib */; };
-		D15119191FC4914C002CF1C7 /* HotelListMacro.json in Resources */ = {isa = PBXBuildFile; fileRef = D15119181FC4914C002CF1C7 /* HotelListMacro.json */; };
 		D162A7E01FC3CBBB00D6A05F /* sampleHotelImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */; };
 		D162A7E21FC3CED300D6A05F /* infoLink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7E11FC3CED300D6A05F /* infoLink.jpg */; };
 		D18F48551FC4722200535881 /* favoriteCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */; };
@@ -65,7 +64,6 @@
 		D126E37E1FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Childs3rdStageTableViewCell.swift; sourceTree = "<group>"; };
 		D126E37F1FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Childs2ndStageTableViewCell.xib; sourceTree = "<group>"; };
 		D126E3801FC2823400FF0DE1 /* ParentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentsTableViewCell.xib; sourceTree = "<group>"; };
-		D15119181FC4914C002CF1C7 /* HotelListMacro.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = HotelListMacro.json; path = ../HotelListMacro.json; sourceTree = "<group>"; };
 		D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleHotelImage.jpg; sourceTree = SOURCE_ROOT; };
 		D162A7E11FC3CED300D6A05F /* infoLink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = infoLink.jpg; sourceTree = SOURCE_ROOT; };
 		D18F48541FC4722200535881 /* favoriteCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = favoriteCoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 				D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */,
 				D1D23C391FBCB426009D3895 /* Info.plist */,
 				D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */,
-				D15119181FC4914C002CF1C7 /* HotelListMacro.json */,
 			);
 			path = "Japanese Inn List";
 			sourceTree = "<group>";
@@ -341,7 +338,6 @@
 				D126E3861FC2823400FF0DE1 /* ParentsTableViewCell.xib in Resources */,
 				D162A7E21FC3CED300D6A05F /* infoLink.jpg in Resources */,
 				D126E3851FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib in Resources */,
-				D15119191FC4914C002CF1C7 /* HotelListMacro.json in Resources */,
 				D126E3831FC2823400FF0DE1 /* Childs3rdStageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

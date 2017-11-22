@@ -11,12 +11,26 @@ import UIKit
 class FourthViewController: UIViewController {
     
     @IBAction func tapLifeofLink(_ sender: UIButton) {
-        let url = URL(string:"http://life-of.net")
-        if( UIApplication.shared.canOpenURL(url!) ) {
-            UIApplication.shared.open(url!)
-        }
-    }
+        print("https://www.google.co.jp/")
         
+//        let url = URL(string: "https://www.google.co.jp/")!
+//        if UIApplication.shared.canOpenURL(url) {
+//            UIApplication.shared.open(url)
+//        }
+    }
+    
+//    @available(iOS 10.0, *)
+//    open func open(_ url: URL, options: [String : Any] = [:], completionHandler completion: ((Bool) -> Swift.Void)? = nil){}
+//    
+//    let url = URL(string: "https://www.google.co.jp/")!
+//    if UIApplication.shared.canOpenURL(url) {
+//        UIApplication.shared.open(url, options: [:], completionHandler: {(isOpenSuccess) in
+//            if isOpenSuccess {
+//                print("\(url) を正常に開けました") //https://www.google.co.jp/ を正常に開けました
+//            }
+//        })
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
