@@ -37,6 +37,7 @@
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="PjH-ZY-Qmf" id="JRA-kH-Csw"/>
+                        <segue destination="ZmF-6z-xQM" kind="show" id="Dju-Hw-k63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -549,7 +550,7 @@
             </objects>
             <point key="canvasLocation" x="1651.875" y="1022.5352112676056"/>
         </scene>
-        <!--Item-->
+        <!--Third View Controller-->
         <scene sceneID="7bc-1J-6i5">
             <objects>
                 <viewController id="1kl-1c-K7h" customClass="ThirdViewController" customModule="Japanese_Inn_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -584,12 +585,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rTa-7S-OAR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Wzb-oZ-T0U"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Wzb-oZ-T0U"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="ZmF-6z-xQM" kind="show" id="6W4-6r-Ei4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chG-9k-fwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2397" y="988"/>
+            <point key="canvasLocation" x="864" y="1024"/>
         </scene>
         <!--Load View-->
         <scene sceneID="8gM-SI-3rR">
@@ -638,9 +642,9 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="1kl-1c-K7h" kind="relationship" relationship="viewControllers" id="1GG-f5-LqA"/>
                         <segue destination="y37-0p-KA5" kind="relationship" relationship="viewControllers" id="Nm6-6o-k5w"/>
                         <segue destination="ZmF-6z-xQM" kind="relationship" relationship="viewControllers" id="NXM-zY-ART"/>
-                        <segue destination="1kl-1c-K7h" kind="relationship" relationship="viewControllers" id="1GG-f5-LqA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -652,4 +656,7 @@
         <image name="infoLink.jpg" width="2075" height="1304"/>
         <image name="sampleHotelImage.jpg" width="640" height="480"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NXM-zY-ART"/>
+    </inferredMetricsTieBreakers>
 </document>
