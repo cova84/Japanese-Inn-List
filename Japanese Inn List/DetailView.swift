@@ -10,11 +10,16 @@ import UIKit
 import MapKit
 import Foundation
 
-class DetailView: UIViewController {
+class DetailView:UIViewController {//ここのエラーはテーブルビュー設定後消えるはず。。。。
+//, UITableViewDataSource, UITableViewDelegate
     
 //    //前の画面から受け取る為のプロパティ
 //    var getAreaName = ""
     
+    var sampleHotekDic = [ "ID" :  "002",  "kind" : "ホテル",  "continent" : "北アメリカ",  "country" : "アメリカ",  "hotelName" : "The One Hundred",  "image" : "5",  "address" : "100 Fort Greene Pl, Brooklyn, NY 11217-1419",  "map" : "40.686535, -73.976661",  "latitude" : "40.686535",  "longitude" : "-73.976661",  "accommodation" : "スタンダード・タイプ\nお一人様ご利用◆140ドル\nお二人様ご利用◆180ドル\n\nスイート・タイプ\nお一人様ご利用◆210ドル\nお二人様ご利用◆250ドル",  "rooms" : "5",  "wifi" : "あり",  "pickup" : "車両の手配を依頼可能",  "equipment" : "バス、トイレ、キッチン、ランドリー、無料電話など",  "reservation" : "HP",  "reservation_URL" : "http://www.theonehundred.com/request.htm",  "tel" : "日本コールセンター : 06-6850-1319\nザ・ワンハンドレト：718-624-8313",  "email" : "info@theonehundred.com",  "url" : "http://www.theonehundred.com/index.htm",  "comment" : "ザ･ワンハンドレッドは、ホテルのようなクオリティーを保ちながら おしゃれな友人宅を訪れているような安心感と快適さのある滞在をしていただこうという考えではじめた ベッド・アンド・ブレックファーストです。 ",  "red" : "246",  "green" : "49",  "blue" : "241" ]
+
+    
+//宿情報タイトル〜住所-----------------------------------------------------------------------
     @IBOutlet weak var hotelName: UILabel!
     @IBOutlet weak var hotelComment: UITextView!
     @IBOutlet weak var hotelImageView: UIImageView!
@@ -24,26 +29,16 @@ class DetailView: UIViewController {
     @IBOutlet weak var hotelAddress: UITextView!
     @IBOutlet weak var hotelDetail: UITableView!
     @IBOutlet weak var hotelReservationWay: UITableView!
-    
+////詳細情報-----------------------------------------------------------------------
+    @IBOutlet weak var detailedInfoTableView: UITableView!
+////予約方法-----------------------------------------------------------------------
+    @IBOutlet weak var resavationTabelView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-        
-//        //全ページからの受け取った情報を表示
-//        print("getAreaName:\(getAreaName)")
-//        //ファイルパスを取得（エリア名が格納されているプロパティリスト）
-//        let filePath = Bundle.main.path(forResource: "areaList", ofType: "plist")
-//        //ファイルの内容を読み込んでディクショナリー型に格納(文字列や数値をキーにして値を格納したり参照できる型)
-//        let dic = NSDictionary(contentsOfFile: filePath!)
-//        //今画面に表示したいデータの取得
-//        let detailInfo = dic![getAreaName] as! NSDictionary
-//        //Dictionaryからキー指定で取り出すと必ずAny型になるので、ダウンキャスト変換が必要
-//        print(detailInfo["description"]as! String)
-//        print(detailInfo["image"]as! String)
-//        print(detailInfo["latitude"]as! String)
-//        print(detailInfo["longitude"]as! String)
-  
+    
 //        //ホテル名
 //        hotelName.text = "hotelName"
 //        //紹介コメント
@@ -51,7 +46,8 @@ class DetailView: UIViewController {
 //        hotelComment.sizeToFit()          // 文字数に合わせて縦に伸びます。
 //        //画像
 //        hotelImageView.image = UIImage(named:detailInfo["image"] as! String)
-//        //お気に入りに追加のコード必要^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    //TODO:02お気に入りに追加のコード必要-------------------------------------------------
     
 //        //地図
 //        let latitude = detailInfo["latitude"] as! String
@@ -80,18 +76,38 @@ class DetailView: UIViewController {
 //        // 4.mapViewにPinを追加
 //        hotelMap.addAnnotation(myPin)
 
-    
-        var contentOffset = CGPoint.zero  //myTextViewの表示を一番上から始める
+    //TODO:03テーブルビューの設定--------------------------------------------------------------------
+//    //2.行数の設定無しにする？？？？
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        //okayu　１行追加したので、ここに１を足さないといけない
+//        return (proArray.count + 1)
+//    }
+//
+//    //3.リストに表示する文字列
+//    //indexPath 行番号とかいろいろ入っている　セルを指定する時によく使う
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        //文字列を表示するせるの取得（セルの再利用)
+//
+//        let cell1 = tableView.dequeueReusableCell(withIdentifier: "Cell_red", for: indexPath)
+//        cell1.textLabel?.text = "プログラム配列の表示"
+//
+//        //表示したい文字の設定（セルの中には文字、画像も入る）
+//        cell1.textLabel?.font = UIFont(name: "Futura", size: 10)
+//        cell1.textLabel?.textColor = UIColor.black
+//    }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        hotelComment.contentOffset = contentOffset //set
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        contentOffset = hotelComment.contentOffset //keep
-    }
+//myTextViewの表示を一番上から始める
+//    var contentOffset = CGPoint.zero
+//
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        hotelComment.contentOffset = contentOffset //set
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        contentOffset = hotelComment.contentOffset //keep
+//    }
     
     
     override func didReceiveMemoryWarning() {

@@ -18,6 +18,7 @@
 		D162A7E01FC3CBBB00D6A05F /* sampleHotelImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */; };
 		D162A7E21FC3CED300D6A05F /* infoLink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7E11FC3CED300D6A05F /* infoLink.jpg */; };
 		D18F48551FC4722200535881 /* favoriteCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */; };
+		D19AEF881FC731840080ACC0 /* hotel_list.plist in Resources */ = {isa = PBXBuildFile; fileRef = D19AEF871FC731840080ACC0 /* hotel_list.plist */; };
 		D1D23C2C1FBCB426009D3895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D23C2B1FBCB426009D3895 /* AppDelegate.swift */; };
 		D1D23C2E1FBCB426009D3895 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D23C2D1FBCB426009D3895 /* FirstViewController.swift */; };
 		D1D23C301FBCB426009D3895 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D23C2F1FBCB426009D3895 /* SecondViewController.swift */; };
@@ -67,6 +68,7 @@
 		D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleHotelImage.jpg; sourceTree = SOURCE_ROOT; };
 		D162A7E11FC3CED300D6A05F /* infoLink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = infoLink.jpg; sourceTree = SOURCE_ROOT; };
 		D18F48541FC4722200535881 /* favoriteCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = favoriteCoreData.xcdatamodel; sourceTree = "<group>"; };
+		D19AEF871FC731840080ACC0 /* hotel_list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotel_list.plist; sourceTree = SOURCE_ROOT; };
 		D1D23C281FBCB426009D3895 /* Japanese Inn List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Japanese Inn List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D23C2B1FBCB426009D3895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1D23C2D1FBCB426009D3895 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				D1D23C361FBCB426009D3895 /* LaunchScreen.storyboard */,
 				D162A7E11FC3CED300D6A05F /* infoLink.jpg */,
 				D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */,
+				D19AEF871FC731840080ACC0 /* hotel_list.plist */,
 				D1D23C391FBCB426009D3895 /* Info.plist */,
 				D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */,
 			);
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1D23C381FBCB426009D3895 /* LaunchScreen.storyboard in Resources */,
+				D19AEF881FC731840080ACC0 /* hotel_list.plist in Resources */,
 				D1D23C351FBCB426009D3895 /* Assets.xcassets in Resources */,
 				D11709101FBE997500F4B3E4 /* Main.storyboard in Resources */,
 				D162A7E01FC3CBBB00D6A05F /* sampleHotelImage.jpg in Resources */,
