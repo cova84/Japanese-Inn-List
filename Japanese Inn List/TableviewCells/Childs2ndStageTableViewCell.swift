@@ -28,7 +28,7 @@ class Childs2ndStageTableViewCell: UITableViewCell {
         
         
         labelChildAtIndex.textColor = UIColor.white
-        labelChildAtIndex.text = "Child custom cell at index: \(indexParam)"
+        labelChildAtIndex.text = "Childs2nd_shamrock_green: \(indexParam)"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

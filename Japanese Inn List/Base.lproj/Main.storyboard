@@ -37,7 +37,7 @@
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="PjH-ZY-Qmf" id="JRA-kH-Csw"/>
-                        <segue destination="ZmF-6z-xQM" kind="show" id="Dju-Hw-k63"/>
+                        <segue destination="ZmF-6z-xQM" kind="show" identifier="showTopToDetail" id="Dju-Hw-k63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1.875" y="1023.5915492957747"/>
+            <point key="canvasLocation" x="-26" y="1024"/>
         </scene>
         <!--Deatil-->
         <scene sceneID="d61-2Q-hig">
@@ -83,7 +83,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYQ-yA-5aK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lK8-Zp-onP">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1551"/>
@@ -477,12 +477,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIh-gu-dnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410.625" y="2395.7746478873241"/>
+            <point key="canvasLocation" x="411" y="2665"/>
         </scene>
         <!--info-->
         <scene sceneID="JYZ-gW-6WN">
             <objects>
-                <viewController id="y37-0p-KA5" customClass="FourthViewController" sceneMemberID="viewController">
+                <viewController id="y37-0p-KA5" customClass="FourthViewController" customModule="Japanese_Inn_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Xi-u5-ocz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -521,11 +521,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAC-Bf-72d">
-                                <rect key="frame" x="16" y="408" width="288" height="52"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jHU-Tb-PGY">
+                                <rect key="frame" x="16" y="402" width="288" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-Pe-53S">
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22D-PP-8jj">
                                         <rect key="frame" x="8" y="8" width="272" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
@@ -533,7 +533,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapLifeofLink:" destination="y37-0p-KA5" eventType="touchUpInside" id="hgB-Ry-K7n"/>
+                                            <action selector="tapLifeofLink:" destination="y37-0p-KA5" eventType="touchUpInside" id="K8v-mH-7YC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -588,7 +588,7 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Wzb-oZ-T0U"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="ZmF-6z-xQM" kind="show" id="6W4-6r-Ei4"/>
+                        <segue destination="ZmF-6z-xQM" kind="show" identifier="showFavoritesToDetail" id="6W4-6r-Ei4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chG-9k-fwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -657,6 +657,6 @@
         <image name="sampleHotelImage.jpg" width="640" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NXM-zY-ART"/>
+        <segue reference="Dju-Hw-k63"/>
     </inferredMetricsTieBreakers>
 </document>

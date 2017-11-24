@@ -13,17 +13,13 @@ class Childs3rdStageTableViewCell: UITableViewCell {
     @IBOutlet weak var imageviewBackground: UIImageView!
     @IBOutlet weak var constraintLabelTitle: NSLayoutConstraint!
     @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelSubTitle: UILabel!
-    @IBOutlet weak var labelIndex: UILabel!
     
     @IBOutlet weak var buttonState: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        labelTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
-        labelSubTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
-        labelIndex.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
+        labelTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
         
         imageviewBackground.layer.cornerRadius = 2.0
         imageviewBackground.layer.masksToBounds = true
@@ -45,12 +41,8 @@ class Childs3rdStageTableViewCell: UITableViewCell {
             constraintLabelTitle.constant = 56
         }
         labelTitle.textColor = UIColor.white
-        labelSubTitle.textColor = UIColor.white
-        labelIndex.textColor = UIColor.white
         
-        labelTitle.text = "Child custom cell"
-        labelSubTitle.text = "Index of:"
-        labelIndex.text = indexParam
+        labelTitle.text = "Childs3rd_sky_blue"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

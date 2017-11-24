@@ -19,8 +19,28 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    //MiniGauideBook代入---plistの読み込み-------------------------------------------------------------------
+    //選択されたエリア名を保存するメンバ変数
+    var selectedName = ""
+    
+    //配列の中身は空にする
+    var hotel_list:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //ファイルパスを取得（エリア名が格納されているプロパティリスト）
+        let filePath = Bundle.main.path(forResource: "hotel_list", ofType: "plist")
+        
+        //ファイルの内容を読み込んでディクショナリー型(文字列や数値をキーにして値を格納したり参照できる型)
+        let dic = NSDictionary(contentsOfFile: filePath!)
+        
+        //TableViemで扱いやすい配列の形（エリア名の入っている配列）
+        for (key,data) in dic! {
+            print(key)
+            hotel_list.append(key as! String)
+        }
+    //----------------------------------------------------------------------------------------
         
         let parent1 = Parent(expanded: true) { () -> [Child] in
             
@@ -79,7 +99,33 @@ class FirstViewController: UIViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         
     }
-    
+
+//MiniGauideBook代入---情報を次のページに渡す-------------------------------------------------------------------
+//
+//    //セルがタップされた時
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        //タップされた行のエリア名を保存
+//        //areList[indexPath.row]はタップされた行番号の情報
+//        selectedName = hotel_list[indexPath.row]
+//
+//        //セグエのidentifierを指定して、画面移動
+//        performSegue(withIdentifier: "showTopToDetail", sender: nil)
+//    }
+//
+//    //セグエを使って画面移動する時発動
+//    override func prepare(for segue:UIStoryboardSegue, sender:Any?){
+//
+//        //次の画面のインスタンスを取得
+//        var dvc = segue.destination as! DetailViewController
+//
+//        //次の画面のプロパティにタップされた行のエリア名を渡す
+//        dvc.getAreaName = selectedName
+//
+//    }
+//MiniGauideBook代入---情報を次のページに渡す-------------------------------------------------------------------
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
