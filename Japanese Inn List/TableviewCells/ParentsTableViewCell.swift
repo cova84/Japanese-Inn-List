@@ -4,7 +4,7 @@
 //
 //  Created by MAC241 on 11/05/17.
 //  Copyright © 2017 KiranJasvanee. All rights reserved.
-//
+
 
 import UIKit
 
@@ -16,28 +16,102 @@ class ParentsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var buttonState: UIButton!
     
+    //選択されたエリア名を保存するメンバ変数
+    var selectedName = ""
+    
+//super.viewDidLoad()必要ない？
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        super.awakeFromNib ()
+
+//plistの読み込み--------------------------------------------------------
+        //plistを参照
+        let path = Bundle.main.path(forResource: "hotel_list_Top", ofType: "plist")
+        //参照したplistを、初期化した配列に納入
+        let hotel_list_Top = NSDictionary(contentsOfFile: path!)
         
         imageviewBackground.layer.cornerRadius = 2.0
         imageviewBackground.layer.masksToBounds = true
     }
-    
-    func cellFillUp(indexParam: String, tupleCount: NSInteger) {
-        if tupleCount == 1 {
+
+//大陸色分け表示--------------------------------------------------------
+//引数　indexParam: String, を削除
+    func cellFillUp(continentTop: String) {
+        if continentTop == "北アメリカ" {
             labelParentCell.text = "北アメリカ"
-            imageviewBackground.backgroundColor = UIColor(red: 45.0/255.0, green: 138.0/255.0, blue: 139.0/255.0, alpha: 1.0)
-//            constraintLeadingLabelParent.constant = 16
-        }else{
-            labelParentCell.text = "北アジア〜東アジア〜東南アジア"
-            imageviewBackground.backgroundColor = UIColor(red: 217.0/255.0, green: 127.0/255.0, blue: 37.0/255.0, alpha: 1.0)
-//            constraintLeadingLabelParent.constant = 78
+            imageviewBackground.backgroundColor = UIColor(
+                  red: 42/255.0
+                , green: 37/255.0
+                , blue: 255/255.0
+                , alpha: 1.0
+            )
+        }else if continentTop == "中南米" {
+            labelParentCell.text = "中南米"
+            imageviewBackground.backgroundColor = UIColor(
+                  red: 246/255.0
+                , green: 49/255.0
+                , blue: 241/255.0
+                , alpha: 1.0
+            )
+        }else if "continentTop" == "ヨーロッパ" {
+            labelParentCell.text = "ヨーロッパ"
+            imageviewBackground.backgroundColor = UIColor(
+                  red: 16/255.0
+                , green: 107/255.0
+                , blue: 20/255.0
+                , alpha: 1.0
+            )
+        }else if continentTop == "アフリカ" {
+            labelParentCell.text = "アフリカ"
+            imageviewBackground.backgroundColor = UIColor(
+                  red: 255/255.0
+                , green: 193/255.0
+                , blue: 37/255.0
+                , alpha: 1.0
+            )
+        }else if continentTop == "アジア（北〜東〜東南アジア）" {
+            labelParentCell.text = "アジア（北〜東〜東南アジア）"
+            imageviewBackground.backgroundColor = UIColor(
+                  red: 42/255.0
+                , green: 37/255.0
+                , blue: 255/255.0
+                , alpha: 1.0
+            )
+        }else if continentTop == "アジア（中央〜西〜南アジア）" {
+            labelParentCell.text = "アジア（中央〜西〜南アジア）"
+            imageviewBackground.backgroundColor = UIColor(
+                red: 39/255.0
+                , green: 162/255.0
+                , blue: 255/255.0
+                , alpha: 1.0
+            )
+        }else if continentTop == "オーストラリア・オセアニア" {
+            labelParentCell.text = "オーストラリア・オセアニア"
+            imageviewBackground.backgroundColor = UIColor(
+                red: 28/255.0
+                , green: 190/255.0
+                , blue: 34/255.0
+                , alpha: 1.0
+            )
         }
         labelParentCell.textColor = UIColor.white
-
     }
 
+//    辞書の中身がintに出来ない。
+//    func cellFillUp(continentTop: String) {
+//        if continentTop == "北アメリカ" {
+//            labelParentCell.text = "北アメリカ"
+//            imageviewBackground.backgroundColor = UIColor(
+//                  red: hotel_list_Top["red"]/255.0
+//                , green: hotel_list_Top["green"]/255.0
+//                , blue: hotel_list_Top["blue"]/255.0
+//                , alpha: 1.0
+//            )
+//        }
+//    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

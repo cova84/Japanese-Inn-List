@@ -19,7 +19,7 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    //MiniGauideBook代入---plistの読み込み-------------------------------------------------------------------
+    //plistの読み込み（引き出し成功）--------------------------------------------------------
     //選択されたエリア名を保存するメンバ変数
     var selectedName = ""
     
@@ -30,65 +30,92 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         
         //ファイルパスを取得（エリア名が格納されているプロパティリスト）
-        let filePath = Bundle.main.path(forResource: "hotel_list", ofType: "plist")
+        let filePath_Top = Bundle.main.path(forResource: "hotel_list_Top", ofType: "plist")
         
         //ファイルの内容を読み込んでディクショナリー型(文字列や数値をキーにして値を格納したり参照できる型)
-        let dic = NSDictionary(contentsOfFile: filePath!)
+        let dic = NSDictionary(contentsOfFile: filePath_Top!)
         
         //TableViemで扱いやすい配列の形（エリア名の入っている配列）
         for (key,data) in dic! {
             print(key)
             hotel_list.append(key as! String)
         }
-    //----------------------------------------------------------------------------------------
         
-        let parent1 = Parent(expanded: true) { () -> [Child] in
-            
-            let child1 = Child()
-            let child2 = Child(expanded: true, subChilds: { () -> [Child] in
-                let subchild1 = Child()
-                let subchild2 = Child(subChilds: { () -> [Child] in
-                    let subchild1 = Child()
-                    let subchild2 = Child(expanded: true, subChilds: { () -> [Child] in
-                        let subchild1 = Child(expanded: true, subChilds: { () -> [Child] in
-                            let subchild1 = Child(expanded: true, subChilds: { () -> [Child] in
-                                let subchild1 = Child()
-                                return [subchild1]
-                            })
-                            return [subchild1]
-                        })
-                        return [subchild1]
-                    })
-                    return [subchild1, subchild2]
-                })
-                return [subchild1, subchild2]
-            })
-            let child3 = Child()
-            
-            return [child1, child2, child3]
-        }
-        let parent2 = Parent(key: "secondChild")
-        let parent3 = Parent { () -> [Child] in
-            let child1 = Child(subChilds: { () -> [Child] in
-                let subchild1 = Child(subChilds: { () -> [Child] in
-                    let subchild1 = Child()
-                    let subchild2 = Child()
-                    return [subchild1, subchild2]
-                })
-                return [subchild1]
-            })
-            
-            let child2 = Child()
-            let child3 = Child()
-            let child4 = Child(subChilds: { () -> [Child] in
+        
+//----------------------------------------------------------------------------------------
+//        北アメリカ northAmerican
+//        中南米   latinAmerica
+//        アジア（北〜東〜東南アジア）  asia_north_east_southeast
+//        アジア（中央〜西〜南アジア）    asia_center_west_south
+//        アフリカ  africa
+//        ヨーロッパ europe
+//        オーストラリア・オセアニア australia_oceania
+//----------------------------------------------------------------------------------------
+
+        
+        let northAmerican = Parent(expanded: true) { () -> [Child] in
+            let child1 = Child(expanded: true, subChilds: { () -> [Child] in
                 let subchild1 = Child()
                 return [subchild1]
             })
-            return [child1, child2, child3, child4]
+            return [child1]
         }
-        arrayTree.append(parent1)
-        arrayTree.append(parent2)
-        arrayTree.append(parent3)
+        
+        let latinAmerica = Parent(expanded: true) { () -> [Child] in
+            let child1 = Child(expanded: true, subChilds: { () -> [Child] in
+                let subchild1 = Child()
+                return [subchild1]
+            })
+            return [child1]
+        }
+        
+        let asia_north_east_southeast = Parent(expanded: true) { () -> [Child] in
+            let child1 = Child(expanded: true, subChilds: { () -> [Child] in
+                let subchild1 = Child()
+                return [subchild1]
+            })
+            return [child1]
+        }
+        
+        let asia_center_west_south = Parent(expanded: true) { () -> [Child] in
+            let child1 = Child(expanded: true, subChilds: { () -> [Child] in
+                let subchild1 = Child()
+                return [subchild1]
+            })
+            return [child1]
+        }
+        
+        let africa = Parent(expanded: true) { () -> [Child] in
+            let child1 = Child(expanded: true, subChilds: { () -> [Child] in
+                let subchild1 = Child()
+                return [subchild1]
+            })
+            return [child1]
+        }
+        
+        let europe = Parent(expanded: true) { () -> [Child] in
+            let child1 = Child(expanded: true, subChilds: { () -> [Child] in
+                let subchild1 = Child()
+                return [subchild1]
+            })
+            return [child1]
+        }
+        
+        let australia_oceania = Parent(expanded: true) { () -> [Child] in
+            let child1 = Child(expanded: true, subChilds: { () -> [Child] in
+                let subchild1 = Child()
+                return [subchild1]
+            })
+            return [child1]
+        }
+        
+        arrayTree.append(northAmerican)
+        arrayTree.append(latinAmerica)
+        arrayTree.append(asia_north_east_southeast)
+        arrayTree.append(asia_center_west_south)
+        arrayTree.append(africa)
+        arrayTree.append(europe)
+        arrayTree.append(australia_oceania)
         kjtreeInstance = KJTree(Parents: arrayTree)
         kjtreeInstance.isInitiallyExpanded = true
         
@@ -138,12 +165,18 @@ class FirstViewController: UIViewController {
 }
 
 extension FirstViewController: UITableViewDataSource, UITableViewDelegate {
+    //行数の設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let total = kjtreeInstance.tableView(tableView, numberOfRowsInSection: section)
         return total
     }
+    
+    //リストに表示する文字列
+    //indexPath 行番号とかいろいろ入っている　セルを指定する時によく使う
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        //文字列を表示するセルの取得（セルの再利用）？？
+        //表示したい文字の設定？？
         let node = kjtreeInstance.cellIdentifierUsingTableView(tableView, cellForRowAt: indexPath)
         let indexTuples = node.index.components(separatedBy: ".")
         
@@ -156,7 +189,7 @@ extension FirstViewController: UITableViewDataSource, UITableViewDelegate {
                 tableView.register(UINib(nibName: "ParentsTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifierParents)
                 cellParents = tableView.dequeueReusableCell(withIdentifier: cellIdentifierParents) as? ParentsTableViewCell
             }
-            cellParents?.cellFillUp(indexParam: node.index, tupleCount: indexTuples.count)
+            //TODO:            cellParents?.cellFillUp(indexParam: node.index, key: indexTuples.count)
             cellParents?.selectionStyle = .none
             
             if node.state == .open {

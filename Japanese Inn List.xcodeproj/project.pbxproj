@@ -31,6 +31,7 @@
 		D1FE761C1FC7C471000786C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FE761B1FC7C471000786C3 /* LaunchScreen.storyboard */; };
 		D1FE761E1FC7CB47000786C3 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FE761D1FC7CB46000786C3 /* plus.png */; };
 		D1FEAD321FCA978600E25738 /* hotel_list_Top.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1FEAD311FCA978600E25738 /* hotel_list_Top.plist */; };
+		D1FEAD341FCAADCD00E25738 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FEAD331FCAADCD00E25738 /* minus.png */; };
 		E07F0054C71539E0DDBF47E3 /* Pods_Japanese_Inn_ListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D372ECE9E429B036752DAE /* Pods_Japanese_Inn_ListUITests.framework */; };
 		EC859E77DECC32464D4DEA55 /* Pods_Japanese_Inn_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD72F3D9F8DC70C24A3A6A2 /* Pods_Japanese_Inn_List.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		D1FE761D1FC7CB46000786C3 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = SOURCE_ROOT; };
 		D1FE762B1FC7D6B0000786C3 /* KJExpandableTableTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KJExpandableTableTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FEAD311FCA978600E25738 /* hotel_list_Top.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotel_list_Top.plist; sourceTree = SOURCE_ROOT; };
+		D1FEAD331FCAADCD00E25738 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = SOURCE_ROOT; };
 		D25FEFD6B6AA635A2EC3D943 /* Pods-Japanese Inn ListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Japanese Inn ListUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Japanese Inn ListUITests/Pods-Japanese Inn ListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DDF8B10278A521C6C90959D0 /* Pods_Japanese_Inn_ListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Japanese_Inn_ListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E720447742A72020819B7602 /* Pods-Japanese Inn List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Japanese Inn List.release.xcconfig"; path = "Pods/Target Support Files/Pods-Japanese Inn List/Pods-Japanese Inn List.release.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				D1D23C341FBCB426009D3895 /* Assets.xcassets */,
 				D117090E1FBE997500F4B3E4 /* Main.storyboard */,
 				D1FE761B1FC7C471000786C3 /* LaunchScreen.storyboard */,
+				D1FEAD331FCAADCD00E25738 /* minus.png */,
 				D1FE761D1FC7CB46000786C3 /* plus.png */,
 				D162A7E11FC3CED300D6A05F /* infoLink.jpg */,
 				D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */,
@@ -361,6 +364,7 @@
 				D11709101FBE997500F4B3E4 /* Main.storyboard in Resources */,
 				D162A7E01FC3CBBB00D6A05F /* sampleHotelImage.jpg in Resources */,
 				D126E3861FC2823400FF0DE1 /* ParentsTableViewCell.xib in Resources */,
+				D1FEAD341FCAADCD00E25738 /* minus.png in Resources */,
 				D162A7E21FC3CED300D6A05F /* infoLink.jpg in Resources */,
 				D126E3851FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib in Resources */,
 				D126E3831FC2823400FF0DE1 /* Childs3rdStageTableViewCell.xib in Resources */,
