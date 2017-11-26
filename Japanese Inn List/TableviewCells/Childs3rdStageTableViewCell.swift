@@ -19,8 +19,6 @@ class Childs3rdStageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        labelTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
-        
         imageviewBackground.layer.cornerRadius = 2.0
         imageviewBackground.layer.masksToBounds = true
     }
@@ -29,20 +27,20 @@ class Childs3rdStageTableViewCell: UITableViewCell {
         
         if tupleCount == 5 {
             imageviewBackground.backgroundColor = UIColor(red: 11.0/255.0, green: 186/255.0, blue: 255.0/255.0, alpha: 1.0)
-            constraintLabelTitle.constant = 94
+//            constraintLabelTitle.constant = 94
         }else if tupleCount == 6 {
             imageviewBackground.backgroundColor = UIColor(red: 11.0/255.0, green: 186/255.0, blue: 255.0/255.0, alpha: 1.0)
-            constraintLabelTitle.constant = 112
+//            constraintLabelTitle.constant = 112
         }else if tupleCount == 7 {
             imageviewBackground.backgroundColor = UIColor(red: 11.0/255.0, green: 186/255.0, blue: 255.0/255.0, alpha: 1.0)
-            constraintLabelTitle.constant = 136
+//            constraintLabelTitle.constant = 136
         }else{
             imageviewBackground.backgroundColor = UIColor(red: 255.0/255.0, green: 105.0/255.0, blue: 105.0/255.0, alpha: 1.0)
-            constraintLabelTitle.constant = 56
+//            constraintLabelTitle.constant = 56
         }
         labelTitle.textColor = UIColor.white
         
-        labelTitle.text = "Childs3rd_sky_blue"
+        labelTitle.text = "ハムステッドグリーン・ゲストハウス"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

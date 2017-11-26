@@ -18,8 +18,6 @@ class Childs2ndStageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        labelChildAtIndex.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
-        
         imageviewBackground.layer.cornerRadius = 2.0
         imageviewBackground.layer.masksToBounds = true
     }
@@ -28,7 +26,7 @@ class Childs2ndStageTableViewCell: UITableViewCell {
         
         
         labelChildAtIndex.textColor = UIColor.white
-        labelChildAtIndex.text = "Childs2nd_shamrock_green: \(indexParam)"
+        labelChildAtIndex.text = "カナダ: \(indexParam)"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

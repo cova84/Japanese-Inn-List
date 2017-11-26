@@ -32,6 +32,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D1FE76241FC7D5B0000786C3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		00557A7694C2D1CD9E1D87EBF67EF9D1 /* Pods-Japanese Inn ListUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Japanese Inn ListUITests-resources.sh"; sourceTree = "<group>"; };
 		0076A76CFE45E306DBE010667778DD4B /* KJExpandableTableTree.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KJExpandableTableTree.xcconfig; sourceTree = "<group>"; };
@@ -72,6 +84,7 @@
 		AE6FD389DE21BE6A987B4F8E268345DE /* Pods-Japanese Inn ListTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Japanese Inn ListTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C7EF195D724745BBFF820AE3D4932195 /* Pods-Japanese Inn ListTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Japanese Inn ListTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D00B196BF1DA533341FEE3F1F7A94337 /* Pods-Japanese Inn ListUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Japanese Inn ListUITests.modulemap"; sourceTree = "<group>"; };
+		D1FE761F1FC7D420000786C3 /* KJExpandableTableTree */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KJExpandableTableTree; sourceTree = "<group>"; };
 		E8310CAB4566D3259C9E882325555608 /* Pods-Japanese Inn ListTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Japanese Inn ListTests-frameworks.sh"; sourceTree = "<group>"; };
 		ED0B731BA8CC3733A29F14AD9D08EF34 /* Pods_Japanese_Inn_ListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Japanese_Inn_ListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C267A7DFEAF0F9707CBE5FDC5F7670 /* Pods-Japanese Inn List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Japanese Inn List.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +233,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1FE761F1FC7D420000786C3 /* KJExpandableTableTree */,
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
@@ -344,6 +358,7 @@
 				38E23F9B123C92005125FEAA6BC5A719 /* Sources */,
 				06FF44A99604D81923B995AE8AE95A57 /* Frameworks */,
 				8CC46DE7F084AE51D5DCAAB8DD10B132 /* Headers */,
+				D1FE76241FC7D5B0000786C3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -365,6 +380,7 @@
 				TargetAttributes = {
 					51FA3A01B3912ADB57A1D2493C2EA409 = {
 						DevelopmentTeam = TM5B8GL954;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -442,6 +458,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = TM5B8GL954;
@@ -455,6 +472,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/KJExpandableTableTree/KJExpandableTableTree.modulemap";
 				PRODUCT_NAME = KJExpandableTableTree;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -527,10 +545,12 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TM5B8GL954;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -541,6 +561,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/KJExpandableTableTree/KJExpandableTableTree.modulemap";
 				PRODUCT_NAME = KJExpandableTableTree;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";

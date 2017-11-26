@@ -19,7 +19,6 @@ class ParentsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        labelParentCell.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
         
         imageviewBackground.layer.cornerRadius = 2.0
         imageviewBackground.layer.masksToBounds = true
@@ -27,13 +26,13 @@ class ParentsTableViewCell: UITableViewCell {
     
     func cellFillUp(indexParam: String, tupleCount: NSInteger) {
         if tupleCount == 1 {
-            labelParentCell.text = "papa_sell"
+            labelParentCell.text = "北アメリカ"
             imageviewBackground.backgroundColor = UIColor(red: 45.0/255.0, green: 138.0/255.0, blue: 139.0/255.0, alpha: 1.0)
-            constraintLeadingLabelParent.constant = 16
+//            constraintLeadingLabelParent.constant = 16
         }else{
-            labelParentCell.text = "papa_cell_else_cell"
+            labelParentCell.text = "北アジア〜東アジア〜東南アジア"
             imageviewBackground.backgroundColor = UIColor(red: 217.0/255.0, green: 127.0/255.0, blue: 37.0/255.0, alpha: 1.0)
-            constraintLeadingLabelParent.constant = 78
+//            constraintLeadingLabelParent.constant = 78
         }
         labelParentCell.textColor = UIColor.white
 
