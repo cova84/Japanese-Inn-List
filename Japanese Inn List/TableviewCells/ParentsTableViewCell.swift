@@ -18,8 +18,11 @@ class ParentsTableViewCell: UITableViewCell {
     
     //選択されたエリア名を保存するメンバ変数
     var selectedName = ""
+    var keyList:[String] = []
+    //TODO:datelistを書き込む
+
     
-//super.viewDidLoad()必要ない？
+    //TODO:ck1 super.viewDidLoad()必要ない？
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
     
@@ -27,22 +30,54 @@ class ParentsTableViewCell: UITableViewCell {
         super.awakeFromNib ()
 
 //plistの読み込み--------------------------------------------------------
-        //plistを参照
+        //ファイルパスを取得（エリア名が格納されているプロパティリスト）
         let path = Bundle.main.path(forResource: "hotel_list_Top", ofType: "plist")
-        //参照したplistを、初期化した配列に納入
-        let hotel_list_Top = NSDictionary(contentsOfFile: path!)
+
+        //ファイルの内容を読み込んでディクショナリー型に格納
+        let dic = NSDictionary(contentsOfFile: path!)
+        
+        //TableView で扱いやすい配列の形(エリア名の入っている配列)を作成
+        for (key,data) in dic! {
+        
+            print(key)
+            print(data)
+            keyList.append(key as! String)
+            let detailInfo = dic![key] as! NSDictionary  /* NSDictionaryからキー指定で取り出すと必ずAnyになるので、Dictionary型だと教えてやらないといけないので、ダウンキャスト必須 */
+            
+            //TODO:datelistを書き込む
         
         imageviewBackground.layer.cornerRadius = 2.0
         imageviewBackground.layer.masksToBounds = true
+        }
     }
+    
 
 //大陸色分け表示--------------------------------------------------------
 //引数　indexParam: String, を削除
     func cellFillUp(continentTop: String) {
+
+        //配列内の数字を
+//        var rgbString = hotel_list_Top["red","green","blue"]
+//
+//        let red = hotel_list_Top["red"] as! String
+//        let green = hotel_list_Top["green"] as! String
+//        let blue = hotel_list_Top["blue"] as! String
+//
+//        let rgb = UIColor(atof(red), atof(green), atof(blue))
+
+//        if continentTop == "北アメリカ" {
+//            labelParentCell.text = "北アメリカ"
+//            imageviewBackground.backgroundColor = UIColor(
+//                red: CGFloat(atof(red)/255.0)
+//                , green: 37/255.0
+//                , blue: 255/255.0
+//                , alpha: 1.0
+//            )
+        
         if continentTop == "北アメリカ" {
             labelParentCell.text = "北アメリカ"
             imageviewBackground.backgroundColor = UIColor(
-                  red: 42/255.0
+                  red: 248/255.0
                 , green: 37/255.0
                 , blue: 255/255.0
                 , alpha: 1.0
@@ -99,7 +134,7 @@ class ParentsTableViewCell: UITableViewCell {
         labelParentCell.textColor = UIColor.white
     }
 
-//    辞書の中身がintに出来ない。
+    //    TODO:ck2辞書の中身がintに出来ない。
 //    func cellFillUp(continentTop: String) {
 //        if continentTop == "北アメリカ" {
 //            labelParentCell.text = "北アメリカ"

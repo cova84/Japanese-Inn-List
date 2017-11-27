@@ -3,21 +3,13 @@
 //
 //  Created by 小林由知 on 2017/11/16.
 //  Copyright © 2017年 Yoshitomo Kobatashi. All rights reserved.
-//
 
 
 import UIKit
 import MapKit
 import Foundation
 
-class DetailView:UIViewController {//ここのエラーはテーブルビュー設定後消えるはず。。。。
-//, UITableViewDataSource, UITableViewDelegate
-    
-//    //前の画面から受け取る為のプロパティ
-//    var getAreaName = ""
-    
-    var sampleHotelList = [ "ID" :  "002",  "kind" : "ホテル",  "continent" : "北アメリカ",  "country" : "アメリカ",  "hotelName" : "The One Hundred",  "image" : "5",  "address" : "100 Fort Greene Pl, Brooklyn, NY 11217-1419",  "map" : "40.686535, -73.976661",  "latitude" : "40.686535",  "longitude" : "-73.976661",  "accommodation" : "スタンダード・タイプ\nお一人様ご利用◆140ドル\nお二人様ご利用◆180ドル\n\nスイート・タイプ\nお一人様ご利用◆210ドル\nお二人様ご利用◆250ドル",  "rooms" : "5",  "wifi" : "あり",  "pickup" : "車両の手配を依頼可能",  "equipment" : "バス、トイレ、キッチン、ランドリー、無料電話など",  "reservation" : "HP",  "reservation_URL" : "http://www.theonehundred.com/request.htm",  "tel" : "日本コールセンター : 06-6850-1319\nザ・ワンハンドレト：718-624-8313",  "email" : "info@theonehundred.com",  "url" : "http://www.theonehundred.com/index.htm",  "comment" : "ザ･ワンハンドレッドは、ホテルのようなクオリティーを保ちながら おしゃれな友人宅を訪れているような安心感と快適さのある滞在をしていただこうという考えではじめた ベッド・アンド・ブレックファーストです。 ",  "red" : "246",  "green" : "49",  "blue" : "241" ]
-
+class DetailView:UIViewController {//, UITableViewDataSource, UITableViewDelegateここのエラーはテーブルビュー設定後消えるはず。。。。
     
 //宿情報タイトル〜住所-----------------------------------------------------------------------
     @IBOutlet weak var hotelName: UILabel!

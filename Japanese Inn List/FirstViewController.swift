@@ -9,26 +9,27 @@
 import UIKit
 import KJExpandableTableTree
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
     
-    //TODO不要な階層を削除。変数を代入。
     
     // KJ Tree instances -------------------------
     var arrayTree:[Parent] = []
     var kjtreeInstance: KJTree = KJTree()
-
-    @IBOutlet weak var tableView: UITableView!
     
-    //plistの読み込み（引き出し成功）--------------------------------------------------------
+    //plistの読み込み01------------------------------------------------------------------------
     //選択されたエリア名を保存するメンバ変数
     var selectedName = ""
-    
     //配列の中身は空にする
     var hotel_list:[String] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //plistの読み込み02------------------------------------------------------------------------
         //ファイルパスを取得（エリア名が格納されているプロパティリスト）
         let filePath_Top = Bundle.main.path(forResource: "hotel_list_Top", ofType: "plist")
         
@@ -41,18 +42,16 @@ class FirstViewController: UIViewController {
             hotel_list.append(key as! String)
         }
         
-        
-//----------------------------------------------------------------------------------------
-//        北アメリカ northAmerican
-//        中南米   latinAmerica
-//        アジア（北〜東〜東南アジア）  asia_north_east_southeast
-//        アジア（中央〜西〜南アジア）    asia_center_west_south
-//        アフリカ  africa
-//        ヨーロッパ europe
-//        オーストラリア・オセアニア australia_oceania
-//----------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------
+        //        北アメリカ northAmerican
+        //        中南米   latinAmerica
+        //        アジア（北〜東〜東南アジア）  asia_north_east_southeast
+        //        アジア（中央〜西〜南アジア）    asia_center_west_south
+        //        アフリカ  africa
+        //        ヨーロッパ europe
+        //        オーストラリア・オセアニア australia_oceania
+        //----------------------------------------------------------------------------------------
 
-        
         let northAmerican = Parent(expanded: true) { () -> [Child] in
             let child1 = Child(expanded: true, subChilds: { () -> [Child] in
                 let subchild1 = Child()
@@ -163,8 +162,8 @@ class FirstViewController: UIViewController {
     }
     
 }
-
-extension FirstViewController: UITableViewDataSource, UITableViewDelegate {
+//TODO:ck これをカブリの為、削除 : UITableViewDataSource, UITableViewDelegate
+extension FirstViewController {
     //行数の設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let total = kjtreeInstance.tableView(tableView, numberOfRowsInSection: section)
@@ -175,9 +174,11 @@ extension FirstViewController: UITableViewDataSource, UITableViewDelegate {
     //indexPath 行番号とかいろいろ入っている　セルを指定する時によく使う
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //文字列を表示するセルの取得（セルの再利用）？？
+        //文字列を表示するセルの取得（セルの再利用）
         //表示したい文字の設定？？
         let node = kjtreeInstance.cellIdentifierUsingTableView(tableView, cellForRowAt: indexPath)
+        
+        //TODO:ck indexTuplesのデータがどこにあるかわからない。なので、何をしてるかわからない。
         let indexTuples = node.index.components(separatedBy: ".")
         
         if indexTuples.count == 1  || indexTuples.count == 4 {
@@ -189,7 +190,9 @@ extension FirstViewController: UITableViewDataSource, UITableViewDelegate {
                 tableView.register(UINib(nibName: "ParentsTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifierParents)
                 cellParents = tableView.dequeueReusableCell(withIdentifier: cellIdentifierParents) as? ParentsTableViewCell
             }
-            //TODO:            cellParents?.cellFillUp(indexParam: node.index, key: indexTuples.count)
+            
+            //TODO:ck ママ編集。実相するための応急処置
+            //cellParents?.cellFillUp(indexParam: node.index, key: indexTuples.count)
             cellParents?.selectionStyle = .none
             
             if node.state == .open {
