@@ -16,11 +16,11 @@ class ParentsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var buttonState: UIButton!
     
+    //plistの読み込み01--------------------------------------------------------
     //選択されたエリア名を保存するメンバ変数
     var selectedName = ""
     var keyList:[String] = []
-    //TODO:datelistを書き込む
-
+    var dataList:[NSDictionary] = []
     
     //TODO:ck1 super.viewDidLoad()必要ない？
 //    override func viewDidLoad() {
@@ -29,28 +29,28 @@ class ParentsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib ()
 
-//plistの読み込み--------------------------------------------------------
+        //plistの読み込み02--------------------------------------------------------
         //ファイルパスを取得（エリア名が格納されているプロパティリスト）
         let path = Bundle.main.path(forResource: "hotel_list_Top", ofType: "plist")
-
         //ファイルの内容を読み込んでディクショナリー型に格納
         let dic = NSDictionary(contentsOfFile: path!)
         
         //TableView で扱いやすい配列の形(エリア名の入っている配列)を作成
         for (key,data) in dic! {
-        
+            
             print(key)
             print(data)
             keyList.append(key as! String)
-            let detailInfo = dic![key] as! NSDictionary  /* NSDictionaryからキー指定で取り出すと必ずAnyになるので、Dictionary型だと教えてやらないといけないので、ダウンキャスト必須 */
+            let detailInfo = dic![key] as! NSDictionary
+            /* NSDictionaryからキー指定で取り出すと必ずAnyになるので、Dictionary型だと教えてやらないといけないので、ダウンキャスト必須 */
             
-            //TODO:datelistを書き込む
-        
+            dataList.append(detailInfo)
+            
         imageviewBackground.layer.cornerRadius = 2.0
         imageviewBackground.layer.masksToBounds = true
         }
     }
-    
+
 
 //大陸色分け表示--------------------------------------------------------
 //引数　indexParam: String, を削除

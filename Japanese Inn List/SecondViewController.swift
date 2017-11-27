@@ -48,6 +48,7 @@ class SecondViewController: UIViewController {
             /* NSDictionaryからキー指定で取り出すと必ずAnyになるので、Dictionary型だと教えてやらないといけないので、ダウンキャスト必須 */
             
             dataList.append(detailInfo)
+            
         }
         
         //今画面に表示したいデータの取得

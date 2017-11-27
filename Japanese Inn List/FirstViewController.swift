@@ -18,28 +18,34 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var arrayTree:[Parent] = []
     var kjtreeInstance: KJTree = KJTree()
     
-    //plistの読み込み01------------------------------------------------------------------------
+    //plistの読み込み01--------------------------------------------------------
     //選択されたエリア名を保存するメンバ変数
     var selectedName = ""
-    //配列の中身は空にする
-    var hotel_list:[String] = []
+    var keyList:[String] = []
+    var dataList:[NSDictionary] = []
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        //plistの読み込み02------------------------------------------------------------------------
+        //plistの読み込み02--------------------------------------------------------
         //ファイルパスを取得（エリア名が格納されているプロパティリスト）
-        let filePath_Top = Bundle.main.path(forResource: "hotel_list_Top", ofType: "plist")
+        let path = Bundle.main.path(forResource: "hotel_list_Detail", ofType: "plist")
+        //ファイルの内容を読み込んでディクショナリー型に格納
+        let dic = NSDictionary(contentsOfFile: path!)
         
-        //ファイルの内容を読み込んでディクショナリー型(文字列や数値をキーにして値を格納したり参照できる型)
-        let dic = NSDictionary(contentsOfFile: filePath_Top!)
-        
-        //TableViemで扱いやすい配列の形（エリア名の入っている配列）
+        //TableView で扱いやすい配列の形(エリア名の入っている配列)を作成
         for (key,data) in dic! {
+            
             print(key)
-            hotel_list.append(key as! String)
+            print(data)
+            keyList.append(key as! String)
+            let detailInfo = dic![key] as! NSDictionary
+            /* NSDictionaryからキー指定で取り出すと必ずAnyになるので、Dictionary型だと教えてやらないといけないので、ダウンキャスト必須 */
+            
+            dataList.append(detailInfo)
+            
         }
         
         //----------------------------------------------------------------------------------------
