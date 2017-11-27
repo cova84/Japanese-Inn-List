@@ -19,6 +19,7 @@ class SecondViewController: UIViewController {
     var keyList:[String] = []
     var dataList:[NSDictionary] = []
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,62 +33,54 @@ class SecondViewController: UIViewController {
         // 4.MapViewに範囲オブジェクトを設定
         mapView.setRegion(region, animated: true)
         
+        
         //plistの読み込み02--------------------------------------------------------
+        //TODO:ck plistのlongitude、latitudeの型変換が不可能。double、int両方。
         //ファイルパスを取得（エリア名が格納されているプロパティリスト）
         let path = Bundle.main.path(forResource: "hotel_list_Detail", ofType: "plist")
         //ファイルの内容を読み込んでディクショナリー型に格納
         let dic = NSDictionary(contentsOfFile: path!)
         
-        //TableView で扱いやすい配列の形(エリア名の入っている配列)を作成
+        //配列の中身を高速
         for (key,data) in dic! {
             
-            print(key)
-            print(data)
-            keyList.append(key as! String)
-            let detailInfo = dic![key] as! NSDictionary
-            /* NSDictionaryからキー指定で取り出すと必ずAnyになるので、Dictionary型だと教えてやらないといけないので、ダウンキャスト必須 */
+            //Any型からDictionary型へ変換
+            var dic = data as! NSDictionary
             
-            dataList.append(detailInfo)
+            //Dictionaryからキー指定で取り出すと必ずAny型になるので、ダウンキャスト変換が必要
+            print(dic["hotelName"] as! String)
+            print(dic["comment"] as! String)
+            print(dic["latitude"] as! String)
+            print(dic["longitude"] as! String)
             
+            // 座標オブジェクト
+            //地図
+            let hotelName = dic["hotelName"] as! String
+            let comment = dic["comment"] as! String
+            let latitude = dic["latitude"] as! String
+            let longitude = dic["longitude"] as! String
+            
+            //型変換が必要。String型〜Double型へ。atof()でくくると変わる。
+            let coodineate = CLLocationCoordinate2DMake(atof(latitude), atof(longitude))
+            //            _ = CLLocationCoordinate2DMake(atof(latitude), atof(longitude))
+
+            //地図にセット
+            mapView.setRegion(region,animated: true)
+
+            // 1.pinオブシェクトを生成（）内は不要
+            let myPin = MKPointAnnotation()
+
+            // 2.pinの座標を設定
+            myPin.coordinate = coodineate
+
+            // 3.タイトル、サブタイトルを設定（タップした時に出る、吹き出しの情報）
+            myPin.title = "\(hotelName)"
+            myPin.subtitle = "\(comment)"
+
+            // 4.mapViewにPinを追加
+            mapView.addAnnotation(myPin)
+
         }
-        
-        //今画面に表示したいデータの取得
-        let detailInfo = dic![selectedName] as! NSDictionary
-        
-        //Dictionaryからキー指定で取り出すと必ずAny型になるので、ダウンキャスト変換が必要
-
-        print(detailInfo["hotelName"]as! String)
-        print(detailInfo["comment"]as! String)
-        print(detailInfo["latitude"]as! String)
-        print(detailInfo["longitude"]as! String)
-        
-        //ピン打ち作業------------------------------------------------------------
-        //地図
-        let hotelName = dic!["hotelName"] as! String
-        let comment = dic!["comment"] as! String
-        let latitude = dic!["latitude"] as! String
-        let longitude = dic!["longitude"] as! String
-
-        // 座標オブジェクト
-        //型変換が必要。String型〜Double型へ。atof()でくくると変わる。
-//        let coodineate = CLLocationCoordinate2DMake(atof(latitude), atof(longitude))
-        _ = CLLocationCoordinate2DMake(atof(latitude), atof(longitude))
-
-        //地図にセット
-        mapView.setRegion(region,animated: true)
-
-        // 1.pinオブシェクトを生成（）内は不要
-        let myPin = MKPointAnnotation()
-
-        // 2.pinの座標を設定
-        myPin.coordinate = coodineate
-
-        // 3.タイトル、サブタイトルを設定（タップした時に出る、吹き出しの情報）
-        myPin.title = "\(hotelName)"
-        myPin.subtitle = "\(comment)"
-
-        // 4.mapViewにPinを追加
-        mapView.addAnnotation(myPin)
     }
 
     override func didReceiveMemoryWarning() {
