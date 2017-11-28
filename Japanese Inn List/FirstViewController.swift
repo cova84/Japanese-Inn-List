@@ -38,8 +38,8 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         //TableView で扱いやすい配列の形(エリア名の入っている配列)を作成
         for (key,data) in dic! {
             
-            print(key)
-            print(data)
+//            print(key)
+//            print(data)
             keyList.append(key as! String)
             let detailInfo = dic![key] as! NSDictionary
             /* NSDictionaryからキー指定で取り出すと必ずAnyになるので、Dictionary型だと教えてやらないといけないので、ダウンキャスト必須 */

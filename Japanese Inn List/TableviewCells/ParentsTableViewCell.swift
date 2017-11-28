@@ -38,8 +38,8 @@ class ParentsTableViewCell: UITableViewCell {
         //TableView で扱いやすい配列の形(エリア名の入っている配列)を作成
         for (key,data) in dic! {
             
-            print(key)
-            print(data)
+//            print(key)
+//            print(data)
             keyList.append(key as! String)
             let detailInfo = dic![key] as! NSDictionary
             /* NSDictionaryからキー指定で取り出すと必ずAnyになるので、Dictionary型だと教えてやらないといけないので、ダウンキャスト必須 */
@@ -133,19 +133,6 @@ class ParentsTableViewCell: UITableViewCell {
         }
         labelParentCell.textColor = UIColor.white
     }
-
-    //    TODO:ck2辞書の中身がintに出来ない。
-//    func cellFillUp(continentTop: String) {
-//        if continentTop == "北アメリカ" {
-//            labelParentCell.text = "北アメリカ"
-//            imageviewBackground.backgroundColor = UIColor(
-//                  red: hotel_list_Top["red"]/255.0
-//                , green: hotel_list_Top["green"]/255.0
-//                , blue: hotel_list_Top["blue"]/255.0
-//                , alpha: 1.0
-//            )
-//        }
-//    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
