@@ -15,6 +15,7 @@
 		D126E3841FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D126E37E1FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift */; };
 		D126E3851FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D126E37F1FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib */; };
 		D126E3861FC2823400FF0DE1 /* ParentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D126E3801FC2823400FF0DE1 /* ParentsTableViewCell.xib */; };
+		D130F2621FCEF4A2008D0513 /* customCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130F2611FCEF4A2008D0513 /* customCellTableViewCell.swift */; };
 		D14467631FCE578900814D1C /* MapKeyStorageMKPA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14467621FCE578900814D1C /* MapKeyStorageMKPA.swift */; };
 		D14467651FCE60E900814D1C /* MapKeyStorageMKAV.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14467641FCE60E900814D1C /* MapKeyStorageMKAV.swift */; };
 		D162A7E01FC3CBBB00D6A05F /* sampleHotelImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */; };
@@ -82,7 +83,8 @@
 		D126E37E1FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Childs3rdStageTableViewCell.swift; sourceTree = "<group>"; };
 		D126E37F1FC2823400FF0DE1 /* Childs2ndStageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Childs2ndStageTableViewCell.xib; sourceTree = "<group>"; };
 		D126E3801FC2823400FF0DE1 /* ParentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentsTableViewCell.xib; sourceTree = "<group>"; };
-		D14467621FCE578900814D1C /* MapKeyStorageMKPA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapKeyStorageMKPA.swift; path = ../MapKeyStorageMKPA.swift; sourceTree = "<group>"; };
+		D130F2611FCEF4A2008D0513 /* customCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCellTableViewCell.swift; sourceTree = "<group>"; };
+		D14467621FCE578900814D1C /* MapKeyStorageMKPA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyStorageMKPA.swift; sourceTree = "<group>"; };
 		D14467641FCE60E900814D1C /* MapKeyStorageMKAV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyStorageMKAV.swift; sourceTree = "<group>"; };
 		D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleHotelImage.jpg; sourceTree = SOURCE_ROOT; };
 		D162A7E11FC3CED300D6A05F /* infoLink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = infoLink.jpg; sourceTree = SOURCE_ROOT; };
@@ -204,15 +206,15 @@
 			isa = PBXGroup;
 			children = (
 				D126E3871FC2823A00FF0DE1 /* TableviewCells */,
+				D1E9ACE81FCEA2D0005853C5 /* MyClass */,
 				D1D23C2B1FBCB426009D3895 /* AppDelegate.swift */,
 				D1D23C2D1FBCB426009D3895 /* FirstViewController.swift */,
 				D1D23C2F1FBCB426009D3895 /* SecondViewController.swift */,
 				D1D23C5B1FBCB867009D3895 /* ThirdViewController.swift */,
 				D1D23C5D1FBCB882009D3895 /* FourthViewController.swift */,
 				D1D23C631FBCBD13009D3895 /* DetailView.swift */,
-				D14467621FCE578900814D1C /* MapKeyStorageMKPA.swift */,
-				D14467641FCE60E900814D1C /* MapKeyStorageMKAV.swift */,
 				D1D23C341FBCB426009D3895 /* Assets.xcassets */,
+				D130F2611FCEF4A2008D0513 /* customCellTableViewCell.swift */,
 				D117090E1FBE997500F4B3E4 /* Main.storyboard */,
 				D1FE761B1FC7C471000786C3 /* LaunchScreen.storyboard */,
 				D1FEAD331FCAADCD00E25738 /* minus.png */,
@@ -243,6 +245,15 @@
 				D1D23C4F1FBCB426009D3895 /* Info.plist */,
 			);
 			path = "Japanese Inn ListUITests";
+			sourceTree = "<group>";
+		};
+		D1E9ACE81FCEA2D0005853C5 /* MyClass */ = {
+			isa = PBXGroup;
+			children = (
+				D14467621FCE578900814D1C /* MapKeyStorageMKPA.swift */,
+				D14467641FCE60E900814D1C /* MapKeyStorageMKAV.swift */,
+			);
+			path = MyClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,6 +565,7 @@
 				D18F48551FC4722200535881 /* favoriteCoreData.xcdatamodeld in Sources */,
 				D1D23C2C1FBCB426009D3895 /* AppDelegate.swift in Sources */,
 				D1D23C5C1FBCB867009D3895 /* ThirdViewController.swift in Sources */,
+				D130F2621FCEF4A2008D0513 /* customCellTableViewCell.swift in Sources */,
 				D126E3821FC2823400FF0DE1 /* Childs2ndStageTableViewCell.swift in Sources */,
 				D1D23C2E1FBCB426009D3895 /* FirstViewController.swift in Sources */,
 				D126E3811FC2823400FF0DE1 /* ParentsTableViewCell.swift in Sources */,

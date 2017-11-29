@@ -473,6 +473,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Deatil" id="avf-u7-nkr"/>
                     <size key="freeformSize" width="320" height="1600"/>
+                    <connections>
+                        <outlet property="detailedInfoTableView" destination="p7X-dm-x6o" id="My8-j2-dqC"/>
+                        <outlet property="hotelAddress" destination="Xza-HP-Lbp" id="po0-Wm-f58"/>
+                        <outlet property="hotelComment" destination="gFQ-vX-DRn" id="dnR-Hr-adw"/>
+                        <outlet property="hotelImageView" destination="9Hm-vV-85M" id="ZOZ-LY-yCh"/>
+                        <outlet property="hotelMap" destination="hf3-Te-Uvn" id="aQd-wM-57J"/>
+                        <outlet property="hotelName" destination="DGg-4w-L04" id="lJh-ql-5gU"/>
+                        <outlet property="resavationTabelView" destination="O9C-xt-FO7" id="w7E-M8-IGC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIh-gu-dnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -494,45 +503,39 @@
                                     <tabBarItem systemItem="more" id="xgv-nI-edq"/>
                                 </items>
                             </tabBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" text="infomation" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0jW-7Z-rMM">
-                                <rect key="frame" x="16" y="20" width="202" height="43"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="infomation" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0jW-7Z-rMM">
+                                <rect key="frame" x="11" y="20" width="202" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="bP1-G4-v6a"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="宿の情報について、ご意見・要望がある方は、下記のHPへアクセスしコメントをお願い致します。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ska-Q8-KDI">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="宿の情報について、ご意見・要望がある方は、下記のHPへアクセスしコメントをお願い致します。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ska-Q8-KDI">
                                 <rect key="frame" x="16" y="71" width="288" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="0rl-Hh-QiE"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="infoLink.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8j8-0x-ban">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="infoLink.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8j8-0x-ban">
                                 <rect key="frame" x="16" y="151" width="288" height="230"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="Mcr-fq-ziD"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Copyright ©  life of." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iui-ym-vt4">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Copyright ©  life of." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iui-ym-vt4">
                                 <rect key="frame" x="16" y="475" width="288" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="hdM-ke-iED"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jHU-Tb-PGY">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jHU-Tb-PGY">
                                 <rect key="frame" x="16" y="402" width="288" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22D-PP-8jj">
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22D-PP-8jj">
                                         <rect key="frame" x="8" y="8" width="272" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                         <state key="normal" title="ご意見・要望は、こちらからお願いします。">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -543,12 +546,6 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.19215686269999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="22D-PP-8jj" secondAttribute="bottom" constant="9" id="Oww-D8-kPr"/>
-                                    <constraint firstItem="22D-PP-8jj" firstAttribute="trailing" secondItem="jHU-Tb-PGY" secondAttribute="trailingMargin" id="PXU-Np-PYF"/>
-                                    <constraint firstItem="22D-PP-8jj" firstAttribute="top" secondItem="jHU-Tb-PGY" secondAttribute="topMargin" id="biO-7L-4Nm"/>
-                                    <constraint firstItem="22D-PP-8jj" firstAttribute="leading" secondItem="jHU-Tb-PGY" secondAttribute="leadingMargin" id="gGp-6j-vGN"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -561,7 +558,7 @@
             </objects>
             <point key="canvasLocation" x="1651.875" y="1022.5352112676056"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Title-->
         <scene sceneID="7bc-1J-6i5">
             <objects>
                 <viewController id="1kl-1c-K7h" customClass="ThirdViewController" customModule="Japanese_Inn_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -582,13 +579,25 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_Favorite" id="mYU-Wh-ctg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" id="mYU-Wh-ctg" customClass="customCellTableViewCell" customModule="Japanese_Inn_List" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="71" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mYU-Wh-ctg" id="SKC-ro-BV6">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ノースアクトンフィールズSTUDIO Ⅱ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-IP-Rhr">
+                                                    <rect key="frame" x="15" y="11" width="284" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="hotelLabel" destination="tDa-IP-Rhr" id="f0r-xF-7IW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -597,8 +606,10 @@
                         <viewLayoutGuide key="safeArea" id="rTa-7S-OAR"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Wzb-oZ-T0U"/>
+                    <navigationItem key="navigationItem" title="Title" id="xrc-og-nfV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="favoriteTableView" destination="vge-Is-w9K" id="SvV-3k-9Tl"/>
                         <segue destination="ZmF-6z-xQM" kind="showDetail" identifier="toDetail" id="Q3p-1d-YhD"/>
                     </connections>
                 </viewController>
@@ -634,6 +645,6 @@
         <image name="sampleHotelImage.jpg" width="640" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aBl-Xm-eJD"/>
+        <segue reference="Q3p-1d-YhD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -3,8 +3,9 @@
     <entity name="Favorite" representedClassName=".Favorite" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hotel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Favorite" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Favorite" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

@@ -21,8 +21,7 @@ class DetailView:UIViewController {//, UITableViewDataSource, UITableViewDelegat
     }
     @IBOutlet weak var hotelMap: MKMapView!
     @IBOutlet weak var hotelAddress: UITextView!
-    @IBOutlet weak var hotelDetail: UITableView!
-    @IBOutlet weak var hotelReservationWay: UITableView!
+
 ////詳細情報-----------------------------------------------------------------------
     @IBOutlet weak var detailedInfoTableView: UITableView!
 ////予約方法-----------------------------------------------------------------------
@@ -48,7 +47,6 @@ class DetailView:UIViewController {//, UITableViewDataSource, UITableViewDelegat
 //        print(detailInfo["image"]as! String)
 //        print(detailInfo["latitude"]as! String)
 //        print(detailInfo["longitude"]as! String)
-    }
     
 //        //ホテル名
 //        hotelName.text = "hotelName"
@@ -63,29 +61,31 @@ class DetailView:UIViewController {//, UITableViewDataSource, UITableViewDelegat
 //        //地図
 //        let latitude = detailInfo["latitude"] as! String
 //        let longitude = detailInfo["longitude"] as! String
-//        //住所
-//        hotelAddress.text = detailInfo["address"] as! String
-//        hotelAddress.sizeToFit() // 文字数に合わせて縦に伸びます。
 
-    
-//        // 座標オブジェクト
-//        //型変換が必要。String型〜Double型へ。atof()でくくると変わる。
-//        let coodineate = CLLocationCoordinate2DMake(atof(latitude), atof(longitude))
-//        //縮尺を設定
-//        let span = MKCoordinateSpanMake(0.05, 0.05)
-//        //範囲オブジェクトを作成
-//        let region = MKCoordinateRegionMake(coodineate, span)
-//        //地図にセット
-//        hotelMap.setRegion(region,animated: true)
-//        // 1.pinオブシェクトを生成（）内は不要
-//        let myPin = MKPointAnnotation()
-//        // 2.pinの座標を設定
-//        myPin.coordinate = coodineate
+        // 座標オブジェクト
+        //型変換が必要。String型〜Double型へ。atof()でくくると変わる。
+        //let coodineate = CLLocationCoordinate2DMake(atof(latitude), atof(longitude))
+        let coodineate = CLLocationCoordinate2DMake(35.658581,139.745433)
+        //縮尺を設定
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        //範囲オブジェクトを作成
+        let region = MKCoordinateRegionMake(coodineate, span)
+        //地図にセット
+        hotelMap.setRegion(region,animated: true)
+        // 1.pinオブシェクトを生成（）内は不要
+        let myPin = MKPointAnnotation()
+        // 2.pinの座標を設定
+        myPin.coordinate = coodineate
 //        // 3.タイトル、サブタイトルを設定（タップした時に出る、吹き出しの情報）
 //        myPin.title = "\(getAreaName)"
 //        myPin.subtitle = "\(description)"
-//        // 4.mapViewにPinを追加
-//        hotelMap.addAnnotation(myPin)
+        // 4.mapViewにPinを追加
+        hotelMap.addAnnotation(myPin)
+
+//        //住所
+//        hotelAddress.text = detailInfo["address"] as! String
+//        hotelAddress.sizeToFit() // 文字数に合わせて縦に伸びます。
+    
 
     //TODO:03テーブルビューの設定--------------------------------------------------------------------
 //    //2.行数の設定無しにする？？？？
@@ -120,7 +120,7 @@ class DetailView:UIViewController {//, UITableViewDataSource, UITableViewDelegat
 //        contentOffset = hotelComment.contentOffset //keep
 //    }
     
-    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
