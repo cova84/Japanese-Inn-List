@@ -1,14 +1,14 @@
 //
-//  memoCode.swift
+//  mapKeyStorage.swift
 //  Japanese Inn List
 //
-//  Created by 小林由知 on 2017/11/28.
+//  Created by 小林由知 on 2017/11/29.
 //  Copyright © 2017年 Yoshitomo Kobatashi. All rights reserved.
 //
 
 import UIKit
 
-class memoCode: UIViewController {
+class mapKeyStorage: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

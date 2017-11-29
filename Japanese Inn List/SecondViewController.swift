@@ -15,7 +15,7 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
     
     //plistの読み込み01--------------------------------------------------------
     //選択されたエリア名を保存するメンバ変数
-    var menbaId = ""
+    var selectPinKeyDic = ""
     //配列の中身は空にする
     var keyList:[String] = []
     var dataList:[NSDictionary] = []
@@ -45,7 +45,6 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
             //Any型からDictionary型へ変換
             var dic = data as! NSDictionary
             //Dictionaryからキー指定で取り出すと必ずAny型になるので、ダウンキャスト変換が必要
-//            print(key)
             print(dic["hotelName"] as! String)
             print(dic["comment"] as! String)
             print(dic["latitude"] as! String)
@@ -63,7 +62,9 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
             //地図にセット
             mapView.setRegion(region,animated: true)
             //1.pinオブシェクトを生成（）内は不要
-            let myPin = MKPointAnnotation()
+            //mapKeyStorageで値を保存
+            let myPin = mapKeyStorageMKPA()
+            myPin.pinKeyDic = dic
             //2.pinの座標を設定
             myPin.coordinate = coodineate
             //3.タイトル、サブタイトルを設定（タップした時に出る、吹き出しの情報）
@@ -100,10 +101,10 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
             //落下アクション
             pinView?.animatesDrop = true
             pinView?.isDraggable = true
-
+            
             //ピンを画像に変更
             //MKPinAnnotationViewをMKAnnotationViewに変えると画像に変更可能
-            //pinView.image = [UIImage imageNamed: "infoLink.jpg"];
+            //pinView.image = [UIImage imageNamed: "minus.png"]
             
             //ピンをテキストに変更
             //MKAnnotationViewをMKPinAnnotationViewに変えるとピン編集可能
@@ -123,20 +124,14 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
     
     //But03:ボタンがタップされると calloutAccessoryControlTapped デリゲートが呼ばれます。ここに必要な処理を書いていくと良いでしょう。
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-        //plistの読み込み02--------------------------------------------------------
-        //ファイルパスを取得（エリア名が格納されているプロパティリスト）
-        let path = Bundle.main.path(forResource: "hotel_list_Detail", ofType: "plist")
-        //ファイルの内容を読み込んでディクショナリー型に格納
-        let dic = NSDictionary(contentsOfFile: path!)
-        
-        print(#function)
-        
         if control == view.rightCalloutAccessoryView {
-            //タップされたピンのIDを保存
-            menbaId = dic!["key"]! as! String
+            
+            //Key(ディクショナリー型で)値の保存
+            let selectPinKeyDic = view as! mapKeyStorageMKAV
+            //print(myPin.pinKeyDic["hotelName"] as! String)
+            
             //セグエのidentifierを指定して、画面移動
-            performSegue(withIdentifier: "toDetail", sender: nil)
+            performSegue(withIdentifier: "toDetail", sender: self)
         }
     }
     
@@ -145,19 +140,11 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
         
         //次の画面のインスタンスを取得
         var dvc = segue.destination as! DetailView
-        var getId: String
         
         //次の画面のプロパティにタップされたピンのIDを渡す
-        dvc.getId = menbaId
+        dvc.getKeyDic = selectPinKeyDic
+        //dvc.getKeyDic = selectPinKeyDic
 
-    }
-    
-    //不明？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
-        if newState == MKAnnotationViewDragState.ending {
-            let droppedAt = view.annotation?.coordinate
-            print(droppedAt ?? "coordicate is nil")
-        }
     }
 }
 
