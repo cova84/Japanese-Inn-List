@@ -600,6 +600,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1kl-1c-K7h" id="Ig8-8Z-hTp"/>
+                                    <outlet property="delegate" destination="1kl-1c-K7h" id="0uk-E9-J0F"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

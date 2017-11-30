@@ -44,6 +44,7 @@ class ThirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         //どのエンティティからデータを取得してくるか設定（Favoriteエンティティ）
         let query:NSFetchRequest<Favorite> = Favorite.fetchRequest()
 
+        
         do{
             //データを一括取得
             let fetchResults = try viewContext.fetch(query)
@@ -128,7 +129,7 @@ class ThirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let viewContext = appDelegate.persistentContainer.viewContext
         
         //どのエンティティからデータを取得してくるか設定（Favoriteエンティティ）
-        let query:NSFetchRequest<Favorite> = Favorite.fetchRequest()
+        let query:NSFetchRequest<favorite> = favorite.fetchRequest()
         
         //データを一括取得
         let fetchResults = try viewContext.fetch(query)

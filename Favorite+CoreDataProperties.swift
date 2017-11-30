@@ -17,6 +17,6 @@ extension Favorite {
     }
 
     @NSManaged public var hotel: String?
-    @NSManaged public var country: String?
+    @NSManaged public var id: String?
 
 }
