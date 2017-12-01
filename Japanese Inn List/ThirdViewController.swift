@@ -9,7 +9,6 @@
 import UIKit
 import CoreData //フレームワーク追加！！！！！！
 
-
 class ThirdViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
 //TODO:必要ないかも？？？
@@ -29,6 +28,7 @@ class ThirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         //CoreDataを読み込む処理
         read()
     }
+    
     //すでに存在するデータの読み込み処理
     func read() {
 
@@ -43,7 +43,6 @@ class ThirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         //どのエンティティからデータを取得してくるか設定（Favoriteエンティティ）
         let query:NSFetchRequest<Favorite> = Favorite.fetchRequest()
-
         
         do{
             //データを一括取得
@@ -118,30 +117,7 @@ class ThirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         //表示したい文字の設定（セルの中には文字、画像も入る）
         var dic = contentHotel[indexPath.row] as! NSDictionary
-
-        //一旦からにする（初期化）
-        contentHotel = []
         
-        //AppDelegateを使う用意をしておく
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        //エンティティを操作する為のオブジェクトを作成
-        let viewContext = appDelegate.persistentContainer.viewContext
-        
-        //どのエンティティからデータを取得してくるか設定（Favoriteエンティティ）
-        let query:NSFetchRequest<favorite> = favorite.fetchRequest()
-        
-        //データを一括取得
-        let fetchResults = try viewContext.fetch(query)
-        
-        //TODO:ラベルにホテル名＋国名表記
-        for result: AnyObject in fetchResults{
-            let hotel :String? = result.value(forKey:"hotel") as? String
-            let country :String? = result.value(forKey:"country") as? String
-            var hotelAndCountry = "\(hotel) | \(country)"
-            cell.hotelLabel.text = hotelAndCountry
-            //cell.hotelLabel.text = dic["hotel"] as! String
-        }
         //文字を設定したセルを返す
         return cell
     }
@@ -149,7 +125,7 @@ class ThirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     //セルがタップされた時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var dic = contentHotel[indexPath.row] as! NSDictionary
-//        selectedSaveDate = dic["saveDate"] as! Date
+    //selectedSaveDate = dic["saveDate"] as! Date
         performSegue(withIdentifier: "toDetail", sender: nil)
     }
 

@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Favorite+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Favorite+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:Japanese Inn List.xcodeproj">
    </FileRef>
    <FileRef

@@ -17,10 +17,12 @@
 		D126E3861FC2823400FF0DE1 /* ParentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D126E3801FC2823400FF0DE1 /* ParentsTableViewCell.xib */; };
 		D130F2621FCEF4A2008D0513 /* customCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130F2611FCEF4A2008D0513 /* customCellTableViewCell.swift */; };
 		D14467631FCE578900814D1C /* MapKeyStorageMKPA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14467621FCE578900814D1C /* MapKeyStorageMKPA.swift */; };
-		D14467651FCE60E900814D1C /* MapKeyStorageMKAV.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14467641FCE60E900814D1C /* MapKeyStorageMKAV.swift */; };
 		D162A7E01FC3CBBB00D6A05F /* sampleHotelImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */; };
 		D162A7E21FC3CED300D6A05F /* infoLink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D162A7E11FC3CED300D6A05F /* infoLink.jpg */; };
-		D18F48551FC4722200535881 /* favoriteCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */; };
+		D16929C81FD0537E00B2B27B /* MapKeyStorageMKAV.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16929C71FD0537E00B2B27B /* MapKeyStorageMKAV.swift */; };
+		D17AEC8E1FD0014100D35BC9 /* favoriteCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D17AEC8C1FD0014100D35BC9 /* favoriteCoreData.xcdatamodeld */; };
+		D17AEC9D1FD0041100D35BC9 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17AEC9B1FD0041100D35BC9 /* Favorite+CoreDataClass.swift */; };
+		D17AEC9E1FD0041100D35BC9 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17AEC9C1FD0041100D35BC9 /* Favorite+CoreDataProperties.swift */; };
 		D19AEF881FC731840080ACC0 /* hotel_list_Detail.plist in Resources */ = {isa = PBXBuildFile; fileRef = D19AEF871FC731840080ACC0 /* hotel_list_Detail.plist */; };
 		D1D23C2C1FBCB426009D3895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D23C2B1FBCB426009D3895 /* AppDelegate.swift */; };
 		D1D23C2E1FBCB426009D3895 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D23C2D1FBCB426009D3895 /* FirstViewController.swift */; };
@@ -85,10 +87,12 @@
 		D126E3801FC2823400FF0DE1 /* ParentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentsTableViewCell.xib; sourceTree = "<group>"; };
 		D130F2611FCEF4A2008D0513 /* customCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCellTableViewCell.swift; sourceTree = "<group>"; };
 		D14467621FCE578900814D1C /* MapKeyStorageMKPA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyStorageMKPA.swift; sourceTree = "<group>"; };
-		D14467641FCE60E900814D1C /* MapKeyStorageMKAV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyStorageMKAV.swift; sourceTree = "<group>"; };
 		D162A7DE1FC3CBBB00D6A05F /* sampleHotelImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleHotelImage.jpg; sourceTree = SOURCE_ROOT; };
 		D162A7E11FC3CED300D6A05F /* infoLink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = infoLink.jpg; sourceTree = SOURCE_ROOT; };
-		D18F48541FC4722200535881 /* favoriteCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = favoriteCoreData.xcdatamodel; sourceTree = "<group>"; };
+		D16929C71FD0537E00B2B27B /* MapKeyStorageMKAV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapKeyStorageMKAV.swift; sourceTree = "<group>"; };
+		D17AEC8D1FD0014100D35BC9 /* favoriteCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = favoriteCoreData.xcdatamodel; sourceTree = "<group>"; };
+		D17AEC9B1FD0041100D35BC9 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Favorite+CoreDataClass.swift"; path = "/Users/user/OneDrive/NexSeedプログラミング/Japanese Inn List App/Japanese Inn List/Japanese Inn List/MyClass/Favorite+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		D17AEC9C1FD0041100D35BC9 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Favorite+CoreDataProperties.swift"; path = "/Users/user/OneDrive/NexSeedプログラミング/Japanese Inn List App/Japanese Inn List/Japanese Inn List/MyClass/Favorite+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		D19AEF871FC731840080ACC0 /* hotel_list_Detail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotel_list_Detail.plist; sourceTree = SOURCE_ROOT; };
 		D1D23C281FBCB426009D3895 /* Japanese Inn List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Japanese Inn List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D23C2B1FBCB426009D3895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,7 +228,7 @@
 				D1FEAD311FCA978600E25738 /* hotel_list_Top.plist */,
 				D19AEF871FC731840080ACC0 /* hotel_list_Detail.plist */,
 				D1D23C391FBCB426009D3895 /* Info.plist */,
-				D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */,
+				D17AEC8C1FD0014100D35BC9 /* favoriteCoreData.xcdatamodeld */,
 			);
 			path = "Japanese Inn List";
 			sourceTree = "<group>";
@@ -251,7 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				D14467621FCE578900814D1C /* MapKeyStorageMKPA.swift */,
-				D14467641FCE60E900814D1C /* MapKeyStorageMKAV.swift */,
+				D16929C71FD0537E00B2B27B /* MapKeyStorageMKAV.swift */,
+				D17AEC9B1FD0041100D35BC9 /* Favorite+CoreDataClass.swift */,
+				D17AEC9C1FD0041100D35BC9 /* Favorite+CoreDataProperties.swift */,
 			);
 			path = MyClass;
 			sourceTree = "<group>";
@@ -559,16 +565,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17AEC8E1FD0014100D35BC9 /* favoriteCoreData.xcdatamodeld in Sources */,
 				D1D23C301FBCB426009D3895 /* SecondViewController.swift in Sources */,
-				D14467651FCE60E900814D1C /* MapKeyStorageMKAV.swift in Sources */,
+				D16929C81FD0537E00B2B27B /* MapKeyStorageMKAV.swift in Sources */,
+				D17AEC9D1FD0041100D35BC9 /* Favorite+CoreDataClass.swift in Sources */,
 				D1D23C641FBCBD13009D3895 /* DetailView.swift in Sources */,
-				D18F48551FC4722200535881 /* favoriteCoreData.xcdatamodeld in Sources */,
 				D1D23C2C1FBCB426009D3895 /* AppDelegate.swift in Sources */,
 				D1D23C5C1FBCB867009D3895 /* ThirdViewController.swift in Sources */,
 				D130F2621FCEF4A2008D0513 /* customCellTableViewCell.swift in Sources */,
 				D126E3821FC2823400FF0DE1 /* Childs2ndStageTableViewCell.swift in Sources */,
 				D1D23C2E1FBCB426009D3895 /* FirstViewController.swift in Sources */,
 				D126E3811FC2823400FF0DE1 /* ParentsTableViewCell.swift in Sources */,
+				D17AEC9E1FD0041100D35BC9 /* Favorite+CoreDataProperties.swift in Sources */,
 				D14467631FCE578900814D1C /* MapKeyStorageMKPA.swift in Sources */,
 				D1D23C5E1FBCB882009D3895 /* FourthViewController.swift in Sources */,
 				D126E3841FC2823400FF0DE1 /* Childs3rdStageTableViewCell.swift in Sources */,
@@ -873,12 +881,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D18F48531FC4722200535881 /* favoriteCoreData.xcdatamodeld */ = {
+		D17AEC8C1FD0014100D35BC9 /* favoriteCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D18F48541FC4722200535881 /* favoriteCoreData.xcdatamodel */,
+				D17AEC8D1FD0014100D35BC9 /* favoriteCoreData.xcdatamodel */,
 			);
-			currentVersion = D18F48541FC4722200535881 /* favoriteCoreData.xcdatamodel */;
+			currentVersion = D17AEC8D1FD0014100D35BC9 /* favoriteCoreData.xcdatamodel */;
 			path = favoriteCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

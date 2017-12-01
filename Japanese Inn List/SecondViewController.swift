@@ -15,8 +15,9 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
     
     //plistの読み込み01--------------------------------------------------------
     //選択されたエリア名を保存するメンバ変数
-    var selectPinKeyDic = ""
-    //配列の中身は空にする
+    //var selectPinKeyDic = ""
+    var getKeyDic = NSDictionary()
+    var selectPinKeyDic = NSDictionary()
     var keyList:[String] = []
     var dataList:[NSDictionary] = []
     
@@ -26,7 +27,9 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
         //はじめの世界地図表示----------------------------------------------------------------------------
         // 1.中心となる場所の座標オブジェクトを作成
         //東京タワー(35.658581,139.745433)
-        let coodineate = CLLocationCoordinate2DMake(35.658581,139.745433)
+        //TODO: テスト後解除　let coodineate = CLLocationCoordinate2DMake(35.658581,139.745433)
+        let coodineate = CLLocationCoordinate2DMake(21.648352,-158.061442)  //ハワイ
+
         // 2.縮尺を設定    (0.1, 0.1)で縮尺を指示(1, 1)が国全体
         let span = MKCoordinateSpanMake(50, 50)
         // 3.範囲オブジェクトを作成
@@ -127,8 +130,8 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
         if control == view.rightCalloutAccessoryView {
             
             //Key(ディクショナリー型で)値の保存
-            let selectPinKeyDic = view as! mapKeyStorageMKAV
-            //print(myPin.pinKeyDic["hotelName"] as! String)
+            var pin:mapKeyStorageMKPA = view.annotation as! mapKeyStorageMKPA
+            selectPinKeyDic = pin.pinKeyDic
             
             //セグエのidentifierを指定して、画面移動
             performSegue(withIdentifier: "toDetail", sender: self)
@@ -142,8 +145,10 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
         var dvc = segue.destination as! DetailView
         
         //次の画面のプロパティにタップされたピンのIDを渡す
+        
         dvc.getKeyDic = selectPinKeyDic
-        //dvc.getKeyDic = selectPinKeyDic
+        
+
 
     }
 }
