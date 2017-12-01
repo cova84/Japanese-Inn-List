@@ -11,7 +11,6 @@ import UIKit
 class ParentsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageviewBackground: UIImageView!
-    @IBOutlet weak var constraintLeadingLabelParent: NSLayoutConstraint!
     @IBOutlet weak var labelParentCell: UILabel!
     
     @IBOutlet weak var buttonState: UIButton!

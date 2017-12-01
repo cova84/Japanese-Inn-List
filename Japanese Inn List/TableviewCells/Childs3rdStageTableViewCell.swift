@@ -11,7 +11,7 @@ import UIKit
 class Childs3rdStageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageviewBackground: UIImageView!
-    @IBOutlet weak var constraintLabelTitle: NSLayoutConstraint!
+
     @IBOutlet weak var labelTitle: UILabel!
     
     @IBOutlet weak var buttonState: UIButton!

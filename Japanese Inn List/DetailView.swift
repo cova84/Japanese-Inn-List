@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import Foundation
+import CoreData
 
 class DetailView:UIViewController, UITableViewDataSource, UITableViewDelegate{
     
@@ -29,12 +30,10 @@ class DetailView:UIViewController, UITableViewDataSource, UITableViewDelegate{
 ////詳細情報-----------------------------------------------------------------------
     @IBOutlet weak var detailedInfoTableView: UITableView!
 ////予約方法-----------------------------------------------------------------------
-    //@IBOutlet weak var resavationTabelView: UITableView!
+    @IBOutlet weak var reservationTabelView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("getKeyDic:\(getKeyDic)")
         
         //plistの読み込み02--------------------------------------------------------
         //ファイルパスを取得（エリア名が格納されているプロパティリスト）
@@ -63,6 +62,7 @@ class DetailView:UIViewController, UITableViewDataSource, UITableViewDelegate{
         let region = MKCoordinateRegionMake(coodineate, span)
         //地図にセット
         hotelMap.setRegion(region,animated: true)
+        
         // 1.pinオブシェクトを生成（）内は不要
         let myPin = MKPointAnnotation()
         // 2.pinの座標を設定
@@ -79,43 +79,122 @@ class DetailView:UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
 
     //TODO:03テーブルビューの設定--------------------------------------------------------------------
-    //2.行数の設定無しにする？？？？
-    var detailedInfoTableView_cell = 10
+    //2.行数の設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return detailedInfoTableView_cell
-
-        //okayu　１行追加したので、ここに１を足さないといけない
-        //return (proArray.count + 1)
+        return 2
     }
-
-    //テーブルビュー２つ
-    //    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //
-    //        if tableView.tag == 1 {
-    //            return 2
-    //        }
-    //
-    //        return 1
-    //    }
+    
+    //    //3.表示する文字列を決定（テーブルビュー２つ）
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if tableView.tag == 1 {
+//            switch indexPath.row {
+//            case 1:
+//                let detailedCell_G1 = tableView.dequeueReusableCell(withIdentifier: "DetailedCell_G", for: indexPath)
+//                detailedCell_G1.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
+//                return detailedCell_G1
+//            default:
+//                let detailedCell_W1 = tableView.dequeueReusableCell(withIdentifier: "DetailedCell_W", for: indexPath)
+//                detailedCell_W1.textLabel?.text = getKeyDic["accommodation"] as! String
+//                return detailedCell_W1
+//            }
+//        } else if tableView.tag == 2 {
+//            switch indexPath.row {
+//            case 1:
+//                let reservationCell_G1 = tableView.dequeueReusableCell(withIdentifier: "ReservationCell_G", for: indexPath)
+//                reservationCell_G1.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
+//                return reservationCell_G1
+//
+//            default:
+//                let reservationCell_W1 = tableView.dequeueReusableCell(withIdentifier: "reservationCell_W", for: indexPath)
+//                reservationCell_W1.textLabel?.text = getKeyDic["accommodation"] as! String
+//                return reservationCell_W1
+//            }
+//            return cell
+//        }
+//    }
+    
+    
+    //    //3.表示する文字列を決定（テーブルビュー２つ）
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //print(#function)
+        switch tableView.tag {
+        case 1:
+            switch indexPath.row {
+            case 1://
+                let detailedCell_G1 = tableView.dequeueReusableCell(withIdentifier: "DetailedCell_G", for: indexPath)
+                detailedCell_G1.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
+                return detailedCell_G1
+            default:
+                
+                let detailedCell_W1 = tableView.dequeueReusableCell(withIdentifier: "DetailedCell_W", for: indexPath)
+                detailedCell_W1.textLabel?.text = getKeyDic["accommodation"] as! String
+                return detailedCell_W1
+            }
+        default:
+            switch indexPath.row {
+            case 1:
+                let reservationCell_G1 = tableView.dequeueReusableCell(withIdentifier: "ReservationCell_G", for: indexPath)
+                reservationCell_G1.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
+                return reservationCell_G1
+                
+            default:
+                let reservationCell_W1 = tableView.dequeueReusableCell(withIdentifier: "ReservationCell_W", for: indexPath)
+                reservationCell_W1.textLabel?.text = getKeyDic["accommodation"] as! String
+                return reservationCell_W1
+            }
+            //return reservationCell_W1
+        }
+    }
+    
+    
+    
+    
+//    //3.表示する文字列を決定（テーブルビュー２つ）
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)  {
+//        if tableView.tag == 0 {
+//            switch indexPath.row {
+//            case 1:
+//                let detailedCell_G1 = tableView.dequeueReusableCell(withIdentifier: "DetailedCell_G", for: indexPath)
+//                detailedCell_G1.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
+//                return detailedCell_G1
+//            default:
+//                let detailedCell_W1 = tableView.dequeueReusableCell(withIdentifier: "DetailedCell_W", for: indexPath)
+//                detailedCell_W1.textLabel?.text = getKeyDic["accommodation"] as! String
+//                return detailedCell_W1
+//            }
+//        } else if tableView.tag == 1 {
+//            switch indexPath.row {
+//            case 1:
+//                let reservationCell_G1 = tableView.dequeueReusableCell(withIdentifier: "ReservationCell_G", for: indexPath)
+//                reservationCell_G1.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
+//                return reservationCell_G1
+//
+//            default:
+//                let reservationCell_W1 = tableView.dequeueReusableCell(withIdentifier: "reservationCell_W", for: indexPath)
+//                reservationCell_W1.textLabel?.text = getKeyDic["accommodation"] as! String
+//                return reservationCell_W1
+//            }
+//        }
+//    }
 
     
-    //3.リストに表示する文字列
-    //indexPath 行番号とかいろいろ入っている　セルを指定する時によく使う
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //文字列を表示するせるの取得（セルの再利用)
-        //okayu indexPath.rowが0からproArray.countまで、１行ずつ設定されるメソッド
-        //okayu　　　今回はindexPath.rowで切りかえしてみたけれど、セクションで分ける手もあるかも
-        
-        switch indexPath.row {
-        case 1:
-            let cell_G01 = tableView.dequeueReusableCell(withIdentifier: "Cell_G01", for: indexPath)
-            cell_G01.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
-            return cell_G01
-        
-        default:
-            let cell_W01 = tableView.dequeueReusableCell(withIdentifier: "Cell_W01", for: indexPath)
-            cell_W01.textLabel?.text = getKeyDic["accommodation"] as! String
-            return cell_W01
+//    //3.リストに表示する文字列
+//    //indexPath 行番号とかいろいろ入っている　セルを指定する時によく使う
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        //文字列を表示するせるの取得（セルの再利用)
+//        //okayu indexPath.rowが0からproArray.countまで、１行ずつ設定されるメソッド
+//        //okayu　　　今回はindexPath.rowで切りかえしてみたけれど、セクションで分ける手もあるかも
+//
+//        switch indexPath.row {
+//        case 1:
+//            let detailedCell_G1 = tableView.dequeueReusableCell(withIdentifier: "DetailedCell_G", for: indexPath)
+//            detailedCell_G1.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
+//            return detailedCell_G1
+//
+//        default:
+//            let detailedCell_W1 = tableView.dequeueReusableCell(withIdentifier: "DetailedCell_W", for: indexPath)
+//            detailedCell_W1.textLabel?.text = getKeyDic["accommodation"] as! String
+//            return detailedCell_W1
 
 //            let cell_G01 = tableView.dequeueReusableCell(withIdentifier: "Cell_G01", for: indexPath)
 //            cell_G01.textLabel?.text = ""
@@ -148,9 +227,9 @@ class DetailView:UIViewController, UITableViewDataSource, UITableViewDelegate{
 //
 //            let cell_W05 = tableView.dequeueReusableCell(withIdentifier: "Cell_W05", for: indexPath)
 //            cell_W05.textLabel?.text = getKeyDic["equipment"] as! String
-            
-        }
-    }
+//
+//        }
+//    }
     
 
     

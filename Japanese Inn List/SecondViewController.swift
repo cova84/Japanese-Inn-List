@@ -72,7 +72,7 @@ class SecondViewController: UIViewController,MKMapViewDelegate {
             myPin.coordinate = coodineate
             //3.タイトル、サブタイトルを設定（タップした時に出る、吹き出しの情報）
             myPin.title = "\(hotelName)"
-            myPin.subtitle = "\(comment)"
+            //TODO:消す？？myPin.subtitle = "\(comment)"
             self.mapView.addAnnotation(myPin)
             //4.mapViewにPinを追加
             mapView.addAnnotation(myPin)
