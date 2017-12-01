@@ -88,6 +88,17 @@ class DetailView:UIViewController, UITableViewDataSource, UITableViewDelegate{
         //return (proArray.count + 1)
     }
 
+    //テーブルビュー２つ
+    //    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //
+    //        if tableView.tag == 1 {
+    //            return 2
+    //        }
+    //
+    //        return 1
+    //    }
+
+    
     //3.リストに表示する文字列
     //indexPath 行番号とかいろいろ入っている　セルを指定する時によく使う
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,40 +107,52 @@ class DetailView:UIViewController, UITableViewDataSource, UITableViewDelegate{
         //okayu　　　今回はindexPath.rowで切りかえしてみたけれど、セクションで分ける手もあるかも
         
         switch indexPath.row {
-        case 0:
-            //okayu １行目はindexPath.row=0 なので、0の時に、.textをプログラム配列の表示
-            //okayu このすぐ下の行は、caseでわけなくても良いけれどヒントで出してしまったので入れておく。
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: "Cell_red", for: indexPath)
-            cell1.textLabel?.text = "プログラム配列の表示"
-            
-            //表示したい文字の設定（セルの中には文字、画像も入る）
-            cell1.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 18)
-            cell1.textLabel?.textColor = UIColor.white
-            return cell1
-            
+        case 1:
+            let cell_G01 = tableView.dequeueReusableCell(withIdentifier: "Cell_G01", for: indexPath)
+            cell_G01.textLabel?.text = "宿泊費（詳細の金額プランはHPからご確認ください。）"
+            return cell_G01
+        
         default:
-            //okayu　２行目以降はproArrayをはめる。
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: "Cell_blue", for: indexPath)
-            cell1.textLabel?.text = proArray[indexPath.row - 1]
+            let cell_W01 = tableView.dequeueReusableCell(withIdentifier: "Cell_W01", for: indexPath)
+            cell_W01.textLabel?.text = getKeyDic["accommodation"] as! String
+            return cell_W01
+
+//            let cell_G01 = tableView.dequeueReusableCell(withIdentifier: "Cell_G01", for: indexPath)
+//            cell_G01.textLabel?.text = ""
+//
+//            let cell_W01 = tableView.dequeueReusableCell(withIdentifier: "Cell_W01", for: indexPath)
+//            cell_W01.textLabel?.font = UIFont(name: "Futura", size: 10)
+//            cell_W01.textLabel?.textColor = UIColor.black
+//            cell_W01.textLabel?.text = getKeyDic["accommodation"] as! String
+//
+//            let cell_G02 = tableView.dequeueReusableCell(withIdentifier: "Cell_G02", for: indexPath)
+//            cell_G02.textLabel?.text = ""
+//
+//            let cell_W02 = tableView.dequeueReusableCell(withIdentifier: "Cell_W02", for: indexPath)
+//            cell_W02.textLabel?.text = getKeyDic["rooms"] as! String
+//
+//            let cell_G03 = tableView.dequeueReusableCell(withIdentifier: "Cell_G03", for: indexPath)
+//            cell_G03.textLabel?.text = ""
+//
+//            let cell_W03 = tableView.dequeueReusableCell(withIdentifier: "Cell_W03", for: indexPath)
+//            cell_W03.textLabel?.text = getKeyDic["wifi"] as! String
+//
+//            let cell_G04 = tableView.dequeueReusableCell(withIdentifier: "Cell_G04", for: indexPath)
+//            cell_G04.textLabel?.text = ""
+//
+//            let cell_W04 = tableView.dequeueReusableCell(withIdentifier: "Cell_W04", for: indexPath)
+//            cell_W04.textLabel?.text = getKeyDic["pickup"] as! String
+//
+//            let cell_G05 = tableView.dequeueReusableCell(withIdentifier: "Cell_G05", for: indexPath)
+//            cell_G05.textLabel?.text = ""
+//
+//            let cell_W05 = tableView.dequeueReusableCell(withIdentifier: "Cell_W05", for: indexPath)
+//            cell_W05.textLabel?.text = getKeyDic["equipment"] as! String
             
-            //表示したい文字の設定（セルの中には文字、画像も入る）
-            cell1.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 18)
-            cell1.textLabel?.textColor = UIColor.white
-            return cell1
         }
-    }
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if tableView.tag == 1 {
-            return 2
-        }
-        
-        return 1
     }
     
 
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
